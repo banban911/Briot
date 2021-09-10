@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;1,400;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap");
+.header {
+  top: 0;
+  z-index: 9999;
+  position: fixed;
+  font-family: Roboto, Arial, Helvetica, "Droid Sans", sans-serif;
+  color: tan;
+  background-color: rgb(0, 7, 7);
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: top ease 0.3s;
+}
+.logo {
+  margin-right: 2rem;
+}
+
+img {
+  width: 100%;
+  object-fit: contain;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  cursor: pointer;
+}
+
+a:hover {
+  color: tan;
+  filter: brightness(1.2);
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.account {
+  font-size: 1.3rem;
+}
+
+.avatar {
+  width: 45px;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.avatar:hover {
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.logo:hover .logo_dropdown_icon path {
+  fill: #fff;
+}
+
+.riot_products {
+  z-index: 9998;
+  color: #333333;
+  background-color: #fff;
+  width: calc(100vw - 1.1rem);
+  height: calc(100vh - 200px);
+  overflow-y: scroll;
+  left: -1rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  transition: all 1 ease-in;
+}
+
+// .logo_wrap::before {
+//   display: block;
+//   content: "";
+//   position: absolute;
+//   background-color: rgba(black, 0.8);
+//   opacity: 0.6;
+//   top: 68px;
+//   left: -1rem;
+//   width: calc(100vw - 1.1rem);
+//   height: calc(100vh - 199px);
+// }
+
+@media screen and (max-width: 765px) {
+  .riot_products {
+    width: calc(80vw - 1rem);
+  }
+}
+
+.game_poster {
+  padding: 0.25rem;
+  height: 100%;
+  height: inherit;
+}
+
+.game_poster_big {
+  padding: 0.25rem;
+  height: inherit;
+}
+
+@media screen and (max-width: 576px) {
+  .game_poster {
+    width: 50%;
+    padding: 0.25rem;
+    height: 100%;
+    height: inherit;
+  }
+
+  .game_poster_big {
+    width: 100%;
+    padding: 0.25rem;
+    height: inherit;
+  }
+}
+
+// .overlay {
+//   background-color: rgba(black, 0.8);
+//   opacity: 0.6;
+//   width: 100vw;
+//   height: 100vh;
+//   z-index: calc(inherit - 2);
+// }

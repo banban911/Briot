@@ -1,0 +1,31 @@
+.banner {
+  background-image: url("https://www.riotgames.com/darkroom/800/d16bfdda8ad27287d56de3bb230aed0d:4839a3501847cb964cb61d062ee8d0f5/tibbers.jpg");
+}
+@media (min-width: 600px) {
+  .banner {
+    background-image: url("https://www.riotgames.com/darkroom/1000/d16bfdda8ad27287d56de3bb230aed0d:ff467e666846eb499caed1d29ef8507a/tibbers.jpg");
+  }
+}
+@media (min-width: 1000px) {
+  .banner {
+    background-image: url("https://www.riotgames.com/darkroom/2000/e76c532a5193f5ca58776f2bae5c7b56:9ad0db47f1d7fb8ee5e4a3843d63a96b/tibbers.jpg");
+  }
+}
+
+.banner {
+  width: calc(100vw - 0);
+  height: calc(100vh - 70px);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hasagi_intro {
+  color: #fff;
+  font-weight: bold;
+  left: 50%;
+  text-align: center;
+  font-size: 3rem;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

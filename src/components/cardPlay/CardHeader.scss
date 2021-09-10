@@ -1,0 +1,23 @@
+.img_big:hover,
+.img_sm:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.img_big img,
+.img_sm img {
+  border-radius: 5px;
+}
+
+.riot_games_content {
+  h6 {
+    color: #7e7e7e;
+    font-size: 0.7rem;
+    font-weight: 800;
+    line-height: 1rem;
+  }
+}
+
+.game_poster_big,
+.game_poster {
+  display: inline-block;
+}
