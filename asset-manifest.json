@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/Briot/static/js/main.3ee107d2.chunk.js",
+    "main.js.map": "/Briot/static/js/main.3ee107d2.chunk.js.map",
+    "runtime-main.js": "/Briot/static/js/runtime-main.80b690e5.js",
+    "runtime-main.js.map": "/Briot/static/js/runtime-main.80b690e5.js.map",
+    "static/js/2.bf707bce.chunk.js": "/Briot/static/js/2.bf707bce.chunk.js",
+    "static/js/2.bf707bce.chunk.js.map": "/Briot/static/js/2.bf707bce.chunk.js.map",
+    "index.html": "/Briot/index.html",
+    "static/js/2.bf707bce.chunk.js.LICENSE.txt": "/Briot/static/js/2.bf707bce.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.80b690e5.js",
+    "static/js/2.bf707bce.chunk.js",
+    "static/js/main.3ee107d2.chunk.js"
+  ]
+}

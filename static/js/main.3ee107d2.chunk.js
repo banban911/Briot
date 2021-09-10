@@ -1,0 +1,2 @@
+(this.webpackJsonpbariot=this.webpackJsonpbariot||[]).push([[0],{24:function(t,e,n){"use strict";n.r(e);n(0);var r=n(7),c=n.n(r),i=n(10),s=n(2);var o=function(){return Object(s.jsx)("div",{children:"App"})};c.a.render(Object(s.jsx)(i.a,{children:Object(s.jsx)(o,{})}),document.getElementById("root"))}},[[24,1,2]]]);
+//# sourceMappingURL=main.3ee107d2.chunk.js.map
