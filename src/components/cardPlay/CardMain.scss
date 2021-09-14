@@ -22,6 +22,10 @@ button:hover {
 .riot_game_item {
   cursor: pointer;
   transition: all ease 0.3s;
+
+  a:hover {
+    color: currentColor;
+  }
 }
 
 .riot_game_item:hover .game_item {

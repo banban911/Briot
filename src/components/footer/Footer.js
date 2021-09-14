@@ -36,10 +36,11 @@ function Footer() {
           </svg>
         </div>
         <div className='col-lg-11 col-md-12 col-12 d-flex row'>
-          <div className='d-flex align-items-center justify-content-md-between justify-content-between col-lg-10 col-md-12 col-12 py-lg-0 py-md-2 py-2'>
+          <div className='d-flex flex-wrap align-items-center justify-content-md-between justify-content-between col-lg-10 col-md-12 col-12 py-lg-0 py-md-2 py-2'>
             {footerLinkItem.map((item, index) => (
               <Link
                 className='link_item mx-2 py-2 py-lg-0 py-md-2'
+                style={{ minWidth: "fit-content" }}
                 to={`./${item}`}
                 key={index}
               >

@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navigation.scss";
 
 import Logo from "../../assest/Logo.svg";
 import LogoDropdown from "../../assest/LogoDropdown.svg";
 
 import { CardItemBig, CardItemSmall } from "../cardPlay/CardHeader";
+
+// const { path, url } = useRouteMatch();
 
 function Navigation() {
   const onScrollRef = useRef();
@@ -27,6 +29,7 @@ function Navigation() {
   }, []);
 
   const [isOpen, setIsOpen] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   function toggleDropdown() {
     setIsOpen(!isOpen);
@@ -34,6 +37,10 @@ function Navigation() {
 
   function closeDropdown() {
     setIsOpen(false);
+  }
+
+  function handleMenu() {
+    setShowMenu(!showMenu);
   }
 
   return (
@@ -44,7 +51,7 @@ function Navigation() {
       <div className='navigation d-flex justify-content-between justify-content-lg-start justify-content-md-start justify-content-sm-between  w-100  align-items-center position-relative'>
         <div className='logo position-relative'>
           <div
-            className='logo_wrap py-4 ms-4  d-flex align-items-center'
+            className='logo_wrap py-3 ms-4  d-flex align-items-center'
             onClick={toggleDropdown}
           >
             <img src={Logo} alt='Riot Game' style={{ width: "75px" }} />
@@ -127,25 +134,193 @@ function Navigation() {
         </div>
 
         {/* cut this fukcing long code */}
-        <ul className='px-2 d-none d-lg-flex d-md-flex d-sm-none'>
-          <li className='link_item active p-3'>
-            <Link to='news'>News</Link>
+        <ul className='d-none d-lg-flex d-md-flex d-sm-none align-items-center w-100 justify-content-lg-between'>
+          <div className='menu_links d-flex align-items-center'>
+            <li className=' position-relative home'>
+              <div className='px-3 py-4'>
+                <NavLink to='/'>Home</NavLink>
+              </div>
+            </li>
+            <li className=' position-relative news'>
+              <div className='px-3 py-4'>
+                <NavLink to='/news'>News</NavLink>
+              </div>
+            </li>
+            <li className=' position-relative game-info'>
+              <div className='px-3 py-4'>
+                <NavLink to='/'>Game Info</NavLink>
+              </div>
+              <div className='game-info_dropdown position-absolute'>
+                <ul>
+                  <li>
+                    <NavLink to='/game-info/lol'>League of Legend</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to='/game-info/tft'>Team Fight Tactic</NavLink>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li className=' position-relative esport'>
+              <div className='px-3 py-4'>
+                <NavLink to='/esport'>Esport</NavLink>
+              </div>
+            </li>
+            <li className=' position-relative support'>
+              <div className='px-3 py-4'>
+                <NavLink to='/'>Support</NavLink>
+              </div>
+              <div className='support_dropdown position-absolute'>
+                <ul>
+                  <li>
+                    <NavLink to='/support/bug'>Bug Report</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to='/support/player-report'>Player Report</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to='/support/problems'>Payment issue</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to='/support/feedback'>Feedback</NavLink>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li className=' position-relative download'>
+              <div className='px-3 py-4'>
+                <NavLink to='/'>Download</NavLink>
+              </div>
+              <div className='download_dropdown position-absolute'>
+                <ul>
+                  <li>
+                    <NavLink to='/download/lol'>League of Legend</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to='/download/tft'>Team Fight Tactic</NavLink>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </div>
+          <div className='search_bar d-flex align-items-center me-5'>
+            <input
+              type='text'
+              name='search_nav'
+              id='search_nav'
+              placeholder='Search
+              '
+              style={{ backgroundColor: "transparent", border: "none" }}
+            />
+            <i className='bi bi-search'></i>
+          </div>
+        </ul>
+        {/** Nav in mobile */}
+        <ul
+          className={`nav_mobile ${
+            showMenu === true ? "show" : "hidden"
+          } position-absolute`}
+          style={{ top: "54px" }}
+        >
+          <li className='link_item_mobile search_bar d-flex align-items-center py-3'>
+            <input
+              type='text'
+              name='search_nav'
+              id='search_nav'
+              placeholder='Search
+              '
+              style={{ backgroundColor: "transparent", border: "none" }}
+            />
+            <i className='bi bi-search'></i>
           </li>
-          <li className='p-3'>
-            <Link to='information'>Game Info</Link>
+          <li className='link_item_mobile w-100 py-3'>
+            <div>
+              <NavLink to='/'>Home</NavLink>
+            </div>
           </li>
-          <li className='p-3'>
-            <Link to='esport'>Esport</Link>
+          <li className='link_item_mobile w-100 py-3'>
+            <div>
+              <NavLink to='news'>News</NavLink>
+            </div>
           </li>
-          <li className='p-3'>
-            <Link to='support'>Support</Link>
+          <li className='link_item_mobile py-3 w-100'>
+            <div>
+              <NavLink to='game-info'>Game Info</NavLink>
+            </div>
+            <div className='game-info_dropdown_mobile'>
+              <ul>
+                <li>
+                  <NavLink to='/game-info/lol'>League of Legend</NavLink>
+                </li>
+                <li>
+                  <NavLink to='/game-info/tft'>Team Fight Tactic</NavLink>
+                </li>
+              </ul>
+            </div>
           </li>
-          <li className='p-3'>
-            <Link to='download'>Download</Link>
+          <li className='link_item_mobile py-3 w-100'>
+            <div>
+              <NavLink to='esport'>Esport</NavLink>
+            </div>
+          </li>
+          <li className='link_item_mobile py-3 w-100'>
+            <div>
+              <NavLink to='support'>Support</NavLink>
+            </div>
+            <div className='support_dropdown_mobile'>
+              <ul>
+                <li>
+                  <NavLink to='/support/bug'>Bug Report</NavLink>
+                </li>
+                <li>
+                  <NavLink to='/support/player-report'>Player Report</NavLink>
+                </li>
+                <li>
+                  <NavLink to='/support/problems'>Payment issue</NavLink>
+                </li>
+                <li>
+                  <NavLink to='/support/feedback'>Feedback</NavLink>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li className='link_item_mobile py-3 w-100'>
+            <div>
+              <NavLink to='download'>Download</NavLink>
+            </div>
+            <div className='download_dropdown_mobile'>
+              <ul>
+                <li>
+                  <NavLink to='/download/lol'>League of Legend</NavLink>
+                </li>
+                <li>
+                  <NavLink to='/download/tft'>Team Fight Tactic</NavLink>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
-        <div className='hbgMenu d-inline-block d-lg-none d-md-none d-sm-inline-block'>
-          <i className='bi bi-list' style={{ fontSize: "1.3rem" }}></i>
+        <div
+          className='hbgMenu d-block d-lg-none d-md-none d-sm-block'
+          onClick={handleMenu}
+        >
+          <div style={{ width: "1.3rem", height: "1.3rem" }}>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='currentColor'
+              className='bi bi-list'
+              viewBox='0 0 16 16'
+            >
+              <path
+                fillRule='evenodd'
+                d={
+                  showMenu === true
+                    ? "M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"
+                    : "M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                }
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </header>

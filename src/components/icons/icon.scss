@@ -1,0 +1,30 @@
+.avatar {
+  background-color: #101217;
+  border-radius: 50%;
+  width: 90%;
+  height: 90%;
+  text-align: center;
+  img {
+    vertical-align: middle;
+    max-width: 30px;
+    max-height: 30px;
+    object-fit: contain;
+  }
+}
+.champIcon_container {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  background-image: -webkit-linear-gradient(
+    top,
+    #3e3310,
+    #806734,
+    #c6b98b,
+    #806734,
+    #3e3310
+  );
+  border-radius: 50%;
+  // box-shadow: 0 0 20px 12px rgb(0, 0, 0 / 20%);
+  content: "";
+  z-index: -1;
+}

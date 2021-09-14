@@ -17,13 +17,7 @@ function ErrorPage() {
           404: PAGE NOT FOUND
           <br />
         </h2>
-        <h1>
-          Something wrong with your url
-          <br />
-          or
-          <br />
-          the page hasn't been ready yet
-        </h1>
+        <h1>The page hasn't been ready yet</h1>
         <Link className='my-3 btn btn-warning py-3 px-4' to='/'>
           Return homepage
         </Link>
