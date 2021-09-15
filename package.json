@@ -1,6 +1,6 @@
 {
-  "homepage": "https://banban911.github.io/Briot#/",
-  "name": "bariot",
+  "homepage": "https://banban911.github.io/Briot/",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
