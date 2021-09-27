@@ -6,14 +6,12 @@
   text-align: center;
   img {
     vertical-align: middle;
-    max-width: 30px;
-    max-height: 30px;
+    max-width: calc(4rem / 3);
+    max-height: calc(4rem / 3);
     object-fit: contain;
   }
 }
 .champIcon_container {
-  width: 60px;
-  height: 60px;
   position: absolute;
   background-image: -webkit-linear-gradient(
     top,

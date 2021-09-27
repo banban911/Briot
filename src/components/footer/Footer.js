@@ -15,7 +15,7 @@ function Footer() {
     "ACCESSIBILITY",
   ];
   return (
-    <div className='footer px-5 py-5'>
+    <div className='footer px-5 py-5 position-relative'>
       <div className='row'>
         <div className='logo col-lg-1 col-md-12 col-12 d-flex justify-content-center justify-content-lg-start'>
           <svg
