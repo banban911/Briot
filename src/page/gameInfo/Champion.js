@@ -12,7 +12,7 @@ function Champions() {
     const fetchChampion = async () => {
       try {
         const response = await axios.get(
-          "http://ddragon.leagueoflegends.com/cdn/11.18.1/data/en_US/champion.json"
+          "https://ddragon.leagueoflegends.com/cdn/11.18.1/data/en_US/champion.json"
         );
         console.log(Object.values(response.data));
         setChampion(Object.values(response.data.data));

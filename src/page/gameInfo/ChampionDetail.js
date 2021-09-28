@@ -10,7 +10,7 @@ function ChampionDetail() {
   const fetchChampion = async () => {
     try {
       const response = await axios.get(
-        `http://ddragon.leagueoflegends.com/cdn/11.18.1/data/en_US/champion/${championId}.json`
+        `https://ddragon.leagueoflegends.com/cdn/11.18.1/data/en_US/champion/${championId}.json`
       );
       setChampiondetail(response.data.data[championId]);
       console.log(championdetail.skins);
