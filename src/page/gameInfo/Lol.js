@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useRouteMatch, Switch, Route } from "react-router-dom";
-import { ChampIcon } from "../../../components/icons/Icons";
+import { ChampIcon } from "../../components/icons/Icons";
 import Champion from "./Champion";
 import Map from "./Map";
 import Story from "./Region";

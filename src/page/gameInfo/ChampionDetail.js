@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { RadarChart } from "../../../components/chart/Chart";
-import { ChampIcon } from "../../../components/icons/Icons";
+import { RadarChart } from "../../components/chart/Chart";
+import { ChampIcon } from "../../components/icons/Icons";
 const axios = require("axios");
 function ChampionDetail() {
   const { championId } = useParams();

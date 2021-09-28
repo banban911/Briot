@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 // import reactDOM from "react-dom";
 import { NavLink } from "react-router-dom";
 import "./Navigation.scss";
@@ -25,9 +25,7 @@ function Navigation() {
     prevScrollPos = currScrollPos;
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScrollNav);
-  }, []);
+  window.addEventListener("scroll", handleScrollNav);
 
   const [isOpen, setIsOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -170,22 +168,12 @@ function Navigation() {
             </li>
             <li className=' position-relative game-info'>
               <div className='px-3 py-4 my-2'>
-                <NavLink to='/game-info/lol'>Game Info</NavLink>
-              </div>
-              <div className='game-info_dropdown position-absolute'>
-                <ul>
-                  <li>
-                    <NavLink to='/game-info/lol'>League of Legend</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to='/game-info/tft'>Team Fight Tactic</NavLink>
-                  </li>
-                </ul>
+                <NavLink to='/game-info'>Game Info</NavLink>
               </div>
             </li>
             <li className=' position-relative esport'>
               <div className='px-3 py-4 my-2'>
-                <NavLink to='/esport'>Tournament</NavLink>
+                <NavLink to='/tournament'>Tournament</NavLink>
               </div>
             </li>
             <li className=' position-relative support'>
@@ -201,7 +189,7 @@ function Navigation() {
                     <NavLink to='/support/player-report'>Player Report</NavLink>
                   </li>
                   <li>
-                    <NavLink to='/support/problems'>Payment issue</NavLink>
+                    <NavLink to='/support/payment'>Payment issue</NavLink>
                   </li>
                   <li>
                     <NavLink to='/support/feedback'>Feedback</NavLink>
@@ -211,17 +199,7 @@ function Navigation() {
             </li>
             <li className=' position-relative download'>
               <div className='px-3 py-4 my-2'>
-                <NavLink to='/download/lol'>Download</NavLink>
-              </div>
-              <div className='download_dropdown position-absolute'>
-                <ul>
-                  <li>
-                    <NavLink to='/download/lol'>League of Legend</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to='/download/tft'>Team Fight Tactic</NavLink>
-                  </li>
-                </ul>
+                <NavLink to='/download'>Download</NavLink>
               </div>
             </li>
           </div>
@@ -259,68 +237,66 @@ function Navigation() {
           </li>
           <li className='link_item_mobile w-100 py-3'>
             <div>
-              <NavLink to='/'>Home</NavLink>
+              <NavLink onClick={handleMenu} to='/'>
+                Home
+              </NavLink>
             </div>
           </li>
           <li className='link_item_mobile w-100 py-3'>
             <div>
-              <NavLink to='news'>News</NavLink>
+              <NavLink onClick={handleMenu} to='news'>
+                News
+              </NavLink>
             </div>
           </li>
           <li className='link_item_mobile py-3 w-100'>
             <div>
-              <NavLink to='game-info'>Game Info</NavLink>
-            </div>
-            <div className='game-info_dropdown_mobile'>
-              <ul>
-                <li>
-                  <NavLink to='/game-info/lol'>League of Legend</NavLink>
-                </li>
-                <li>
-                  <NavLink to='/game-info/tft'>Team Fight Tactic</NavLink>
-                </li>
-              </ul>
+              <NavLink onClick={handleMenu} to='game-info'>
+                Game Info
+              </NavLink>
             </div>
           </li>
           <li className='link_item_mobile py-3 w-100'>
             <div>
-              <NavLink to='esport'>Esport</NavLink>
+              <NavLink onClick={handleMenu} to='tournament'>
+                Tournament
+              </NavLink>
             </div>
           </li>
-          <li className='link_item_mobile py-3 w-100'>
+          <li className='link_item_mobile py-3 w-100 support_mobile'>
             <div>
               <NavLink to='support'>Support</NavLink>
             </div>
             <div className='support_dropdown_mobile'>
               <ul>
                 <li>
-                  <NavLink to='/support/bug'>Bug Report</NavLink>
+                  <NavLink onClick={handleMenu} to='/support/bug'>
+                    Bug Report
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to='/support/player-report'>Player Report</NavLink>
+                  <NavLink onClick={handleMenu} to='/support/player-report'>
+                    Player Report
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to='/support/problems'>Payment issue</NavLink>
+                  <NavLink onClick={handleMenu} to='/support/payment'>
+                    Payment issue
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to='/support/feedback'>Feedback</NavLink>
+                  <NavLink onClick={handleMenu} to='/support/feedback'>
+                    Feedback
+                  </NavLink>
                 </li>
               </ul>
             </div>
           </li>
           <li className='link_item_mobile py-3 w-100'>
             <div>
-              <NavLink to='download'>Download</NavLink>
-            </div>
-            <div className='download_dropdown_mobile'>
-              <ul>
-                <li>
-                  <NavLink to='/download/lol'>League of Legend</NavLink>
-                </li>
-                <li>
-                  <NavLink to='/download/tft'>Team Fight Tactic</NavLink>
-                </li>
-              </ul>
+              <NavLink onClick={handleMenu} to='download'>
+                Download
+              </NavLink>
             </div>
           </li>
         </ul>
@@ -341,8 +317,10 @@ function Navigation() {
                 fillRule='evenodd'
                 d={
                   showMenu === true
-                    ? "M4.27274 4.27274C4.35898 4.18629 4.46143 4.11769 4.57421 4.07089C4.687 4.02409 4.80792 4 4.93003 4C5.05214 4 5.17305 4.02409 5.28584 4.07089C5.39863 4.11769 5.50108 4.18629 5.58731 4.27274L10.5002 9.18753L15.4132 4.27274C15.4995 4.18643 15.602 4.11796 15.7147 4.07124C15.8275 4.02453 15.9484 4.00049 16.0705 4.00049C16.1925 4.00049 16.3134 4.02453 16.4262 4.07124C16.539 4.11796 16.6414 4.18643 16.7277 4.27274C16.8141 4.35906 16.8825 4.46153 16.9292 4.57431C16.976 4.68708 17 4.80796 17 4.93003C17 5.0521 16.976 5.17297 16.9292 5.28575C16.8825 5.39853 16.8141 5.501 16.7277 5.58731L11.813 10.5002L16.7277 15.4132C16.8141 15.4995 16.8825 15.602 16.9292 15.7147C16.976 15.8275 17 15.9484 17 16.0705C17 16.1925 16.976 16.3134 16.9292 16.4262C16.8825 16.539 16.8141 16.6414 16.7277 16.7277C16.6414 16.8141 16.539 16.8825 16.4262 16.9292C16.3134 16.976 16.1925 17 16.0705 17C15.9484 17 15.8275 16.976 15.7147 16.9292C15.602 16.8825 15.4995 16.8141 15.4132 16.7277L10.5002 11.813L5.58731 16.7277C5.501 16.8141 5.39853 16.8825 5.28575 16.9292C5.17297 16.976 5.0521 17 4.93003 17C4.80796 17 4.68708 16.976 4.57431 16.9292C4.46153 16.8825 4.35906 16.8141 4.27274 16.7277C4.18643 16.6414 4.11796 16.539 4.07124 16.4262C4.02453 16.3134 4.00049 16.1925 4.00049 16.0705C4.00049 15.9484 4.02453 15.8275 4.07124 15.7147C4.11796 15.602 4.18643 15.4995 4.27274 15.4132L9.18753 10.5002L4.27274 5.58731C4.18629 5.50108 4.11769 5.39863 4.07089 5.28584C4.02409 5.17305 4 5.05214 4 4.93003C4 4.80792 4.02409 4.687 4.07089 4.57421C4.11769 4.46143 4.18629 4.35898 4.27274 4.27274Z"
-                    : "M3.125 15C3.125 14.8342 3.19085 14.6753 3.30806 14.5581C3.42527 14.4408 3.58424 14.375 3.75 14.375H16.25C16.4158 14.375 16.5747 14.4408 16.6919 14.5581C16.8092 14.6753 16.875 14.8342 16.875 15C16.875 15.1658 16.8092 15.3247 16.6919 15.4419C16.5747 15.5592 16.4158 15.625 16.25 15.625H3.75C3.58424 15.625 3.42527 15.5592 3.30806 15.4419C3.19085 15.3247 3.125 15.1658 3.125 15ZM3.125 10C3.125 9.83424 3.19085 9.67527 3.30806 9.55806C3.42527 9.44085 3.58424 9.375 3.75 9.375H16.25C16.4158 9.375 16.5747 9.44085 16.6919 9.55806C16.8092 9.67527 16.875 9.83424 16.875 10C16.875 10.1658 16.8092 10.3247 16.6919 10.4419C16.5747 10.5592 16.4158 10.625 16.25 10.625H3.75C3.58424 10.625 3.42527 10.5592 3.30806 10.4419C3.19085 10.3247 3.125 10.1658 3.125 10ZM3.125 5C3.125 4.83424 3.19085 4.67527 3.30806 4.55806C3.42527 4.44085 3.58424 4.375 3.75 4.375H16.25C16.4158 4.375 16.5747 4.44085 16.6919 4.55806C16.8092 4.67527 16.875 4.83424 16.875 5C16.875 5.16576 16.8092 5.32473 16.6919 5.44194C16.5747 5.55915 16.4158 5.625 16.25 5.625H3.75C3.58424 5.625 3.42527 5.55915 3.30806 5.44194C3.19085 5.32473 3.125 5.16576 3.125 5V5Z"
+                    ? // close icon
+                      "M4.27274 4.27274C4.35898 4.18629 4.46143 4.11769 4.57421 4.07089C4.687 4.02409 4.80792 4 4.93003 4C5.05214 4 5.17305 4.02409 5.28584 4.07089C5.39863 4.11769 5.50108 4.18629 5.58731 4.27274L10.5002 9.18753L15.4132 4.27274C15.4995 4.18643 15.602 4.11796 15.7147 4.07124C15.8275 4.02453 15.9484 4.00049 16.0705 4.00049C16.1925 4.00049 16.3134 4.02453 16.4262 4.07124C16.539 4.11796 16.6414 4.18643 16.7277 4.27274C16.8141 4.35906 16.8825 4.46153 16.9292 4.57431C16.976 4.68708 17 4.80796 17 4.93003C17 5.0521 16.976 5.17297 16.9292 5.28575C16.8825 5.39853 16.8141 5.501 16.7277 5.58731L11.813 10.5002L16.7277 15.4132C16.8141 15.4995 16.8825 15.602 16.9292 15.7147C16.976 15.8275 17 15.9484 17 16.0705C17 16.1925 16.976 16.3134 16.9292 16.4262C16.8825 16.539 16.8141 16.6414 16.7277 16.7277C16.6414 16.8141 16.539 16.8825 16.4262 16.9292C16.3134 16.976 16.1925 17 16.0705 17C15.9484 17 15.8275 16.976 15.7147 16.9292C15.602 16.8825 15.4995 16.8141 15.4132 16.7277L10.5002 11.813L5.58731 16.7277C5.501 16.8141 5.39853 16.8825 5.28575 16.9292C5.17297 16.976 5.0521 17 4.93003 17C4.80796 17 4.68708 16.976 4.57431 16.9292C4.46153 16.8825 4.35906 16.8141 4.27274 16.7277C4.18643 16.6414 4.11796 16.539 4.07124 16.4262C4.02453 16.3134 4.00049 16.1925 4.00049 16.0705C4.00049 15.9484 4.02453 15.8275 4.07124 15.7147C4.11796 15.602 4.18643 15.4995 4.27274 15.4132L9.18753 10.5002L4.27274 5.58731C4.18629 5.50108 4.11769 5.39863 4.07089 5.28584C4.02409 5.17305 4 5.05214 4 4.93003C4 4.80792 4.02409 4.687 4.07089 4.57421C4.11769 4.46143 4.18629 4.35898 4.27274 4.27274Z"
+                    : // menu icon
+                      "M3.125 15C3.125 14.8342 3.19085 14.6753 3.30806 14.5581C3.42527 14.4408 3.58424 14.375 3.75 14.375H16.25C16.4158 14.375 16.5747 14.4408 16.6919 14.5581C16.8092 14.6753 16.875 14.8342 16.875 15C16.875 15.1658 16.8092 15.3247 16.6919 15.4419C16.5747 15.5592 16.4158 15.625 16.25 15.625H3.75C3.58424 15.625 3.42527 15.5592 3.30806 15.4419C3.19085 15.3247 3.125 15.1658 3.125 15ZM3.125 10C3.125 9.83424 3.19085 9.67527 3.30806 9.55806C3.42527 9.44085 3.58424 9.375 3.75 9.375H16.25C16.4158 9.375 16.5747 9.44085 16.6919 9.55806C16.8092 9.67527 16.875 9.83424 16.875 10C16.875 10.1658 16.8092 10.3247 16.6919 10.4419C16.5747 10.5592 16.4158 10.625 16.25 10.625H3.75C3.58424 10.625 3.42527 10.5592 3.30806 10.4419C3.19085 10.3247 3.125 10.1658 3.125 10ZM3.125 5C3.125 4.83424 3.19085 4.67527 3.30806 4.55806C3.42527 4.44085 3.58424 4.375 3.75 4.375H16.25C16.4158 4.375 16.5747 4.44085 16.6919 4.55806C16.8092 4.67527 16.875 4.83424 16.875 5C16.875 5.16576 16.8092 5.32473 16.6919 5.44194C16.5747 5.55915 16.4158 5.625 16.25 5.625H3.75C3.58424 5.625 3.42527 5.55915 3.30806 5.44194C3.19085 5.32473 3.125 5.16576 3.125 5V5Z"
                 }
               />
             </svg>

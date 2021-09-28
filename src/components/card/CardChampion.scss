@@ -16,5 +16,42 @@
 }
 
 .championCard_footer:hover .explore {
-  height: 100%;
+  height: fit-content;
+}
+
+@media screen and (max-width: 768px) {
+  .champion_logo {
+    height: 150px;
+  }
+  .championCard_footer {
+    padding: 0.15rem 0 !important;
+    .tags {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.35rem !important;
+    }
+
+    .name {
+      font-size: 0.5rem !important;
+    }
+
+    .explore {
+      margin-top: 0 !important;
+      span {
+        // font-size: 0.2rem !important;
+        display: none;
+      }
+
+      // i {
+      //   font-size: 0.25rem !important;
+      // }
+    }
+  }
+
+  .championCard_wrapper {
+    flex: 0 0 25% !important;
+  }
 }

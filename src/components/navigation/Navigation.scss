@@ -235,9 +235,11 @@ ul {
   }
 }
 
-.game-info_dropdown_mobile,
-.support_dropdown_mobile,
-.download_dropdown_mobile {
+.support_mobile:hover + .support_dropdown_mobile {
+  height: 100%;
+}
+
+.support_dropdown_mobile {
   height: 0;
   overflow: hidden;
 }

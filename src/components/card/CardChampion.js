@@ -6,10 +6,13 @@ function CardChampion(props) {
   return (
     <Link
       to={url}
-      className='d-block p-2 position-relative'
-      style={{ flex: "0 1 20%", borderRadius: "5px" }}
+      className='d-block p-2 position-relative championCard_wrapper'
+      style={{ flex: "0 0 20%", borderRadius: "5px" }}
     >
-      <div className='position-relative' style={{ overflow: "hidden" }}>
+      <div
+        className='championCard_container position-relative'
+        style={{ overflow: "hidden" }}
+      >
         <div
           className='champion_logo position-relative'
           style={{
@@ -66,7 +69,7 @@ function CardChampion(props) {
             >
               Explore
             </span>
-            <i className='bi bi-arrow-right ps-2'></i>
+            {/* <i className='bi bi-arrow-right ps-2'></i> */}
           </div>
         </div>
       </div>
