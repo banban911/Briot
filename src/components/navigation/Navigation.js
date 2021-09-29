@@ -81,12 +81,10 @@ function Navigation() {
       ref={onScrollRef}
     >
       <div className='navigation d-flex justify-content-between justify-content-lg-start justify-content-md-start justify-content-sm-between  w-100  align-items-center position-relative'>
-        <div
-          className='logo position-relative'
-          style={{ padding: "calc((84.75px - 38.17px)/2) 0" }}
-        >
+        <div className='logo position-relative'>
           <div // logo
             className='logo_wrap ms-4  d-flex align-items-center'
+            style={{ padding: "calc((84.75px - 38.17px)/2) 0" }}
             onClick={toggleDropdown}
           >
             <Logo width='2.5rem' bgColor='#fff' color='#000' />
@@ -95,9 +93,14 @@ function Navigation() {
               style={{ width: "10px", height: "16px" }}
             />
           </div>
+          <div
+            className={`underlay ${isOpen === true ? "" : "d-none w-0"}`}
+            onClick={closeDropdown}
+          ></div>
+
           <div // riot products dropdown container
-            className={`riot_products position-absolute align-items-center px-2 px-lg-4 px-md-3 px-sm-2  pb-4 ${
-              isOpen === true ? "d-block" : "d-none"
+            className={`riot_products position-absolute align-items-center px-2 px-lg-4 px-md-3 px-sm-2  pb-4 overflow-hidden ${
+              isOpen === true ? "open" : "close"
             }`}
           >
             <div className='riot_games'>
@@ -129,15 +132,16 @@ function Navigation() {
                   />
                 ))}
                 {/* <div className='d-flex'> */}
-                {CardItemSmallInfo.map((item, index) => (
-                  <CardItemSmall
-                    className='w-50 w-lg-12.5 w-md-12.5 w-sm-50'
-                    key={index}
-                    url={item.url}
-                    content={item.content}
-                    device={item.device}
-                  />
-                ))}
+                <div className='d-flex d-lg-inline-block d-md-inline-block d-sm-flex overflow-auto'>
+                  {CardItemSmallInfo.map((item, index) => (
+                    <CardItemSmall
+                      key={index}
+                      url={item.url}
+                      content={item.content}
+                      device={item.device}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
