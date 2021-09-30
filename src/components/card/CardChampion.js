@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ChampIcon } from "../icons/Icons";
 import "./CardChampion.scss";
 function CardChampion(props) {
   const { name, tags, img, url } = props;
@@ -35,7 +36,7 @@ function CardChampion(props) {
           }}
         >
           <div
-            className='tags'
+            className='tags pt-0 pt-md-3 pt-sm-0'
             style={{
               fontSize: "0.8rem",
               fontWeight: "700",
@@ -45,7 +46,6 @@ function CardChampion(props) {
           >
             {tags}
           </div>
-
           <div
             className='name'
             style={{
@@ -57,7 +57,12 @@ function CardChampion(props) {
           >
             {name}
           </div>
-
+          <div
+            className='champIcon position-absolute d-none d-md-block d-sm-none'
+            style={{ top: "-25%", left: "50%", transform: "translateX(-50%)" }}
+          >
+            <ChampIcon />
+          </div>
           <div className='explore mt-3' style={{ border: "1px solid #7e633b" }}>
             <span
               style={{

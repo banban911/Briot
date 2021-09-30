@@ -23,11 +23,29 @@ function ChampionDetail() {
   }, []);
 
   return (
-    <div style={{ marginTop: "69px" }}>
-      <div className='filter_search py-2'>
-        <div className='searchbykeywords d-flex'>
+    <div style={{ marginTop: "85px" }}>
+      <div className='filter_search'>
+        <div
+          className='search d-flex p-2'
+          style={{
+            border: "#fff 1px solid",
+            backgroundColor: "black",
+          }}
+        >
           <ChampIcon />
-          <input type='text' placeholder='Enter name or id' />
+
+          <input
+            className='ms-3'
+            type='text'
+            name='search_nav'
+            id='search_nav'
+            placeholder='Champion name or id'
+            style={{
+              backgroundColor: "transparent",
+              border: "none",
+              color: "#fff",
+            }}
+          />
         </div>
       </div>
       <div

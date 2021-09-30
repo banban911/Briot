@@ -12,17 +12,16 @@ import { Logo } from "../logo/Logo";
 
 function Navigation() {
   const onScrollRef = useRef();
-  let prevScrollPos = 0;
   const handleScrollNav = () => {
     const headerHeight = document.querySelector(".header").clientHeight;
     let currScrollPos =
       window.pageYOffset || document.documentElement.scrollTop;
-    if (currScrollPos > prevScrollPos) {
-      onScrollRef.current.style.top = `-${headerHeight}px`;
+    if (currScrollPos > headerHeight) {
+      onScrollRef.current.style.backgroundColor = "rgba(15, 15, 15, 0.85)";
     } else {
-      onScrollRef.current.style.top = "0";
+      onScrollRef.current.style.backgroundColor = "transparent";
     }
-    prevScrollPos = currScrollPos;
+    // prevScrollPos = currScrollPos;
   };
 
   window.addEventListener("scroll", handleScrollNav);
@@ -172,7 +171,7 @@ function Navigation() {
             </li>
             <li className=' position-relative game-info'>
               <div className='px-3 py-4 my-2'>
-                <NavLink to='/game-info'>Game Info</NavLink>
+                <NavLink to='/game-info/champion'>Game Info</NavLink>
               </div>
             </li>
             <li className=' position-relative esport'>
@@ -255,7 +254,7 @@ function Navigation() {
           </li>
           <li className='link_item_mobile py-3 w-100'>
             <div>
-              <NavLink onClick={handleMenu} to='game-info'>
+              <NavLink onClick={handleMenu} to='game-info/champion'>
                 Game Info
               </NavLink>
             </div>

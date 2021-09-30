@@ -1,0 +1,25 @@
+.card_region_container {
+  position: relative;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(180deg, #f0e6d2, #c89b3c);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.region_icon {
+  width: 5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.region_name {
+  background-color: #010a13;
+  color: #fff;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem 1.5rem;
+}

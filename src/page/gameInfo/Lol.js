@@ -1,28 +1,15 @@
 import React from "react";
 import { Link, useRouteMatch, Switch, Route } from "react-router-dom";
-import { ChampIcon } from "../../components/icons/Icons";
+import { ChampIcon, RegionIcon, MapIcon } from "../../components/icons/Icons";
 import Champion from "./Champion";
 import Map from "./Map";
-import Story from "./Region";
+import Region from "./Region";
 
 function Lol() {
   let { path, url } = useRouteMatch();
 
-  const linkstyle = {
-    paddingTop: "1rem",
-    paddingLeft: "1rem",
-    fontSize: "1rem",
-    fontWeight: "bold",
-    fontFamily: "'Source Serif Pro', serif",
-    color: "rgb(103, 71, 31)",
-    background:
-      "rgba(0, 0, 0, 0) -webkit-linear-gradient(bottom, rgb(103, 71, 31), rgb(203, 172, 98)) repeat scroll 0% 0% padding-box text",
-    letterSpacing: "1rem",
-    textAlign: "center",
-  };
   return (
-    <div style={{ marginTop: "70px", marginBottom: "500px" }}>
-      Solo Yasuo khong brooo?
+    <div style={{ marginTop: "85px", marginBottom: "500px" }}>
       <ul className='d-flex justify-content-center'>
         <li>
           <Link
@@ -30,7 +17,6 @@ function Lol() {
             className='d-flex align-items-center flex-column mx-4 px-3'
           >
             <ChampIcon />
-            <p style={linkstyle}>CHAMPION</p>
           </Link>
         </li>
         <li>
@@ -38,25 +24,22 @@ function Lol() {
             to={`${url}/map`}
             className='d-flex align-items-center flex-column mx-4 px-3'
           >
-            <ChampIcon />
-            <p style={linkstyle}>MAP</p>
+            <MapIcon />
           </Link>
         </li>
         <li>
           <Link
-            to={`${url}/story`}
+            to={`${url}/region`}
             className='d-flex align-items-center flex-column mx-4 px-3'
           >
-            <ChampIcon />
-
-            <p style={linkstyle}>REGION</p>
+            <RegionIcon />
           </Link>
         </li>
       </ul>
       <Switch>
         <Route path={`${path}/champion`} component={Champion}></Route>
         <Route path={`${path}/map`} component={Map}></Route>
-        <Route path={`${path}/story`} component={Story}></Route>
+        <Route path={`${path}/region`} component={Region}></Route>
       </Switch>
     </div>
   );
