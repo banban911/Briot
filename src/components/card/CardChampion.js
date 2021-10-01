@@ -4,6 +4,7 @@ import { ChampIcon } from "../icons/Icons";
 import "./CardChampion.scss";
 function CardChampion(props) {
   const { name, tags, img, url } = props;
+
   return (
     <Link
       to={url}
@@ -17,11 +18,10 @@ function CardChampion(props) {
         <div
           className='champion_logo position-relative'
           style={{
-            backgroundImage: `url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${img}_0.jpg')`,
+            backgroundImage: `url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${img}_0.jpg'`,
             backgroundPosition: "70.3646% 32.037%",
-            backgroundSize: "cover",
-            // backgroundOrigin: "content-box",
-            // backgroundClip: "content-box",
+            backgroundSize: "678px, 717px",
+            backgroundRepeat: "no-repeat",
           }}
         ></div>
 
@@ -32,14 +32,14 @@ function CardChampion(props) {
             bottom: "0",
             color: "#fff",
             borderTop: "1px solid #7e633b",
-            backgroundColor: "#101217",
+            backgroundColor: "rgba(16, 18, 23, 0.87)",
           }}
         >
           <div
             className='tags pt-0 pt-md-3 pt-sm-0'
             style={{
               fontSize: "0.8rem",
-              fontWeight: "700",
+              fontWeight: "600",
               color: "#937341",
               letterSpacing: "1px",
             }}

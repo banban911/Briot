@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
+// import "swiper/css/bundle";
+
 import { useParams } from "react-router-dom";
 import { RadarChart } from "../../components/chart/Chart";
 import { ChampIcon } from "../../components/icons/Icons";
+import PaginationSlide from "../../components/slide/PaginationSlide";
+import "./Lol.scss";
 const axios = require("axios");
 function ChampionDetail() {
   const { championId } = useParams();
@@ -23,30 +27,41 @@ function ChampionDetail() {
   }, []);
 
   return (
-    <div style={{ marginTop: "85px" }}>
-      <div className='filter_search'>
-        <div
-          className='search d-flex p-2'
-          style={{
-            border: "#fff 1px solid",
-            backgroundColor: "black",
-          }}
-        >
-          <ChampIcon />
+    <div
+      className='ChampionDetail_container'
+      style={{
+        paddingTop: "85px",
+        backgroundImage: `url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_0.jpg')`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
+      <div
+        className='filter_search ps-3'
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
+      >
+        <form className='search d-flex p-2'>
+          <label for='search_nav'>
+            <ChampIcon />
+          </label>
 
           <input
             className='ms-3'
             type='text'
             name='search_nav'
             id='search_nav'
-            placeholder='Champion name or id'
+            placeholder='Enter a champion name...'
             style={{
               backgroundColor: "transparent",
               border: "none",
               color: "#fff",
+              width: "200px",
             }}
           />
-        </div>
+          {/* <div type='submit' className='btn primary-btn text-center'>
+            Search
+          </div> */}
+        </form>
       </div>
       <div
         className='champion_poster position-relative'
@@ -107,9 +122,9 @@ function ChampionDetail() {
       </div> */}
       <div
         className='d-flex p-2'
-        style={{ backgroundColor: "rgba(0, 0, 0, .8)" }}
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
       >
-        <div>
+        <div className='d-flex flex-column'>
           <div className='champion_feature p-3' style={{ flex: "0 0 40%" }}>
             <RadarChart info={{ ...championdetail.info }} />
           </div>
@@ -117,7 +132,10 @@ function ChampionDetail() {
             <p>{championdetail.lore}</p>
           </div>
         </div>
-        <div className='skins d-flex' style={{ flex: "0 0 60%" }}>
+        <div
+          className='skins d-flex'
+          style={{ flex: "0 0 60%", overflow: "hidden" }}
+        >
           {[...Object.values({ ...championdetail.skins })]
             .slice(1) // except the default skin
             .map((skin, index) => (
@@ -127,6 +145,7 @@ function ChampionDetail() {
                 alt='skins'
               />
             ))}
+          {/* <PaginationSlide slideContent= /> */}
         </div>
       </div>
     </div>
