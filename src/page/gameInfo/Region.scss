@@ -9,12 +9,12 @@
   flex-wrap: wrap;
 }
 
-.card_regions > * {
-  flex: 0 0 25%;
-}
+// .card_regions > * {
+//   flex: 0 0 25%;
+// }
 
-@media screen and (max-width: 768px) {
-  .card_regions > * {
-    flex: 0 0 100%;
-  }
-}
+// @media screen and (max-width: 768px) {
+//   .card_regions > * {
+//     flex: 0 0 100%;
+//   }
+// }

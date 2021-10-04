@@ -1,6 +1,9 @@
 import React from "react";
 import "./CardNews.scss";
 import { Logo } from "../logo/Logo";
+import { ReactComponent as PhotoIcon } from "../../assest/PhotoIcon.svg";
+import { ReactComponent as VideoIcon } from "../../assest/VideoIcon.svg";
+import { ReactComponent as StoryIcon } from "../../assest/StoryIcon.svg";
 
 function CardLastestNews(props) {
   const { title, bgUrl } = props;
@@ -63,4 +66,36 @@ function CardNews(props) {
   );
 }
 
-export { CardLastestNews, CardNews };
+function CardNewsMain(props) {
+  const { img, time, title, summary, iconType } = props;
+  const renderSwitch = (param) => {
+    switch (param.type) {
+      case "photo":
+        return <PhotoIcon />;
+      case "video":
+        return <VideoIcon />;
+      default:
+        return <StoryIcon />;
+    }
+  };
+  return (
+    <>
+      <div className='cardnews_main_container col-12 col-lg-6 col-md-6 px-3'>
+        <div className='cardnews_main_img'>
+          <img src={img} alt={title} />
+          <div className='cardnews_main_icon'>{renderSwitch(iconType)}</div>
+        </div>
+        <div className='cardnews_main_content_container  d-flex'>
+          <div className='newstimestamp'>{time}</div>
+          <div className='cardnew_main_content'>
+            <div className='eyebow'>NEWS</div>
+            <div className='cardnews_main_title'>{title}</div>
+            <div className='cardnew_main_summary'>{summary}</div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export { CardLastestNews, CardNews, CardNewsMain };

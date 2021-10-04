@@ -85,9 +85,9 @@ function Region() {
   return (
     <div className='container region'>
       <h1 style={linkstyle}>REGION</h1>
-      <div className='card_regions d-flex'>
+      <div className='card_regions row'>
         {regionInfo.map((item, index) => (
-          <div className='px-2'>
+          <div className='px-2 col-12 col-lg-3 col-md-4 col-sm-6'>
             <CardRegion
               key={index}
               regionBg={item.bg}

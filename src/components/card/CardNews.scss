@@ -44,3 +44,50 @@
 // .news_item:hover .news_item::after {
 //   transform: scale(100);
 // }
+
+.cardnews_main_img {
+  position: relative;
+}
+
+.cardnews_main_icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.cardnews_main_content_container {
+  padding: 2.5rem 0;
+}
+
+.newstimestamp {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.cardnew_main_content {
+  flex: 1;
+}
+
+.eyebow {
+  background-color: #d1363a;
+  background-origin: content-box;
+  width: fit-content;
+  color: #e7e6e3;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+
+  padding: 0.25rem 0.8rem;
+}
+
+.cardnews_main_title {
+  font-family: "Mark Pro", Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.cardnews_main_summary {
+  font-family: "Mark Pro", Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}

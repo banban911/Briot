@@ -2,7 +2,7 @@
   position: relative;
   border: solid 1px transparent;
   border-radius: 8px;
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
   transition: all 0.2s ease-in-out;
 }
 
@@ -27,20 +27,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4rem;
   position: absolute;
   top: 37%;
   left: 50%;
+  filter: brightness(1.2);
+  object-fit: contain;
   transform: translate(-50%, -50%);
   transition: ease-in-out 0.2s;
+
+  img {
+    height: 75px;
+  }
 }
 
 .region_name {
   background-color: #010a13;
   color: #fff;
   text-align: center;
-  font-family: "Poppins", sans-serif;
-  font-size: 1.8rem;
+  font-family: "Source Serif Pro", serif;
+  font-weight: 600;
+  font-size: 1.6rem;
   padding: 1rem 1.5rem;
 }
 
@@ -62,9 +68,12 @@
   }
 
   .region_icon {
-    width: 10%;
-    height: 10%;
-    object-fit: contain;
+    width: 80px;
+    height: 100px;
+
+    img {
+      height: 65px;
+    }
   }
 }
 

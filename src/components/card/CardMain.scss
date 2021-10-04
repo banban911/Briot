@@ -1,22 +1,24 @@
-button {
-  background-color: transparent;
-  position: absolute;
-  bottom: 10%;
-  left: 10%;
-  opacity: 0;
-  transform: ease 0.3;
-  border-radius: 32px 30px 30px 32px;
-  border: 1px solid #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  line-height: 2rem;
-}
+.riot_game_item {
+  button {
+    background-color: transparent;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    opacity: 0;
+    transform: ease 0.3;
+    border-radius: 32px 30px 30px 32px;
+    border: 1px solid #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 2rem;
+  }
 
-button:hover {
-  color: rgb(211, 2, 2);
-  filter: brightness(1.2);
-  background-color: #fff;
+  button:hover {
+    color: rgb(211, 2, 2);
+    filter: brightness(1.2);
+    background-color: #fff;
+  }
 }
 
 .riot_game_item {
