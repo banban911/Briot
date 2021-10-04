@@ -11,7 +11,7 @@ import SupportPayment from "./page/support/Payment";
 import SupportFeedback from "./page/support/Feedback";
 import Tournament from "./page/tournamnet/Tournament";
 import ChampionDetail from "../src/page/gameInfo/ChampionDetail";
-import Lol from "../src/page/gameInfo/Lol";
+import Lol from "../src/page/gameInfo";
 
 function App() {
   return (

@@ -3,6 +3,16 @@
 //   background-size: cover;
 //   background-attachment: fixed;
 // }
+.lol_container {
+  padding: 1rem 0;
+  background-image: url("https://am-a.akamaihd.net/image?f=https%3A%2F%2Funiverse-meeps.leagueoflegends.com%2Fv1%2Fassets%2Fimages%2Fvex-color-splash.jpg&resize=1800:");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.lol_nav {
+  margin: 85px 10px;
+}
 
 .ChampionDetail_container {
   background-image: url("https://universe.leagueoflegends.com/images/latestBg.jpg");

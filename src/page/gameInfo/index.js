@@ -4,13 +4,14 @@ import { ChampIcon, RegionIcon, MapIcon } from "../../components/icons/Icons";
 import Champion from "./Champion";
 import Map from "./Map";
 import Region from "./Region";
+import "./Lol.scss";
 
 function Lol() {
   let { path, url } = useRouteMatch();
 
   return (
-    <div style={{ marginTop: "85px", marginBottom: "500px" }}>
-      <ul className='d-flex justify-content-center'>
+    <div className='lol_container'>
+      <ul className='lol_nav d-flex justify-content-center'>
         <li>
           <Link
             to={`${url}/champion`}

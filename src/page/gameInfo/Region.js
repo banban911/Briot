@@ -8,6 +8,66 @@ function Region() {
       icon: "https://universe.leagueoflegends.com/images/bandle_city_crest_icon.png",
       name: "bandle city",
     },
+    {
+      bg: "https://universe-meeps.leagueoflegends.com/v1/assets/images/factions/bilgewater_splash.jpg",
+      icon: "https://universe.leagueoflegends.com/images/bilgewater_crest_icon.png",
+      name: "bilgewater",
+    },
+    {
+      bg: "https://universe-meeps.leagueoflegends.com/v1/assets/images/factions/demacia_splash.jpg",
+      icon: "https://universe.leagueoflegends.com/images/demacia_crest_icon.png",
+      name: "demacia",
+    },
+    {
+      bg: "https://universe-meeps.leagueoflegends.com/v1/assets/images/factions/ionia-01.jpg",
+      icon: "https://universe.leagueoflegends.com/images/iona_crest_icon.png",
+      name: "ionia",
+    },
+    {
+      bg: "https://universe-meeps.leagueoflegends.com/v1/assets/images/ixtal_splash.jpg",
+      icon: "https://universe.leagueoflegends.com/images/ixtal_crest_icon.png",
+      name: "ixtal",
+    },
+    {
+      bg: "https://universe-meeps.leagueoflegends.com/v1/assets/images/factions/noxus_splash.jpg",
+      icon: "https://universe.leagueoflegends.com/images/noxus_crest_icon.png",
+      name: "noxus",
+    },
+    {
+      bg: "https://universe-meeps.leagueoflegends.com/v1/assets/images/factions/piltover_splash.jpg",
+      icon: "https://universe.leagueoflegends.com/images/piltover_crest_icon.png",
+      name: "piltover",
+    },
+    {
+      bg: "https://universe-meeps.leagueoflegends.com/v1/assets/images/factions/shadow-isles_splash.jpg",
+      icon: "https://universe.leagueoflegends.com/images/shadow_isles_crest_icon.png",
+      name: "shadow isles",
+    },
+    {
+      bg: "https://universe-meeps.leagueoflegends.com/v1/assets/images/factions/shurima_splash.jpg",
+      icon: "https://universe.leagueoflegends.com/images/shurima_crest_icon.png",
+      name: "shurima",
+    },
+    {
+      bg: "https://universe-meeps.leagueoflegends.com/v1/assets/images/factions/mount-targon_splash.jpg",
+      icon: "https://universe.leagueoflegends.com/images/mt_targon_crest_icon.png",
+      name: "targon",
+    },
+    {
+      bg: "https://universe-meeps.leagueoflegends.com/v1/assets/images/factions/freljord_splash.jpg",
+      icon: "https://universe.leagueoflegends.com/images/freljord_crest_icon.png",
+      name: "the freljord",
+    },
+    {
+      bg: "https://universe-meeps.leagueoflegends.com/v1/assets/images/void-an-unknowable-power.jpg",
+      icon: "https://universe.leagueoflegends.com/images/void_crest_icon.png",
+      name: "the void",
+    },
+    {
+      bg: "https://universe-meeps.leagueoflegends.com/v1/assets/images/factions/zaun_splash.jpg",
+      icon: "https://universe.leagueoflegends.com/images/zaun_crest_icon.png",
+      name: "zaun",
+    },
   ];
 
   const linkstyle = {
@@ -25,9 +85,9 @@ function Region() {
   return (
     <div className='container region'>
       <h1 style={linkstyle}>REGION</h1>
-      <div className='d-flex'>
+      <div className='card_regions d-flex'>
         {regionInfo.map((item, index) => (
-          <div style={{ flex: "0 0 25%" }} className='px-2'>
+          <div className='px-2'>
             <CardRegion
               key={index}
               regionBg={item.bg}

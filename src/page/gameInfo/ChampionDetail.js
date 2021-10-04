@@ -11,27 +11,26 @@ function ChampionDetail() {
   const { championId } = useParams();
   const [championdetail, setChampiondetail] = useState([]);
 
-  const fetchChampion = async () => {
-    try {
-      const response = await axios.get(
-        `https://ddragon.leagueoflegends.com/cdn/11.18.1/data/en_US/champion/${championId}.json`
-      );
-      setChampiondetail(response.data.data[championId]);
-      console.log(championdetail.skins);
-    } catch (error) {
-      console.error(error);
-    }
-  };
   useEffect(() => {
+    const fetchChampion = async () => {
+      try {
+        const response = await axios.get(
+          `https://ddragon.leagueoflegends.com/cdn/11.18.1/data/en_US/champion/${championId}.json`
+        );
+        setChampiondetail(response.data.data[championId]);
+      } catch (error) {
+        console.error(error);
+      }
+    };
     fetchChampion();
-  }, []);
+  }, [championId]);
 
   return (
     <div
       className='ChampionDetail_container'
       style={{
         paddingTop: "85px",
-        backgroundImage: `url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_0.jpg')`,
+        backgroundImage: `url('https://am-a.akamaihd.net/image?f=https%3A%2F%2Funiverse-meeps.leagueoflegends.com%2Fv1%2Fassets%2Fimages%2Fbard-color-splash.jpg&resize=1800:')`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
@@ -136,16 +135,12 @@ function ChampionDetail() {
           className='skins d-flex'
           style={{ flex: "0 0 60%", overflow: "hidden" }}
         >
-          {[...Object.values({ ...championdetail.skins })]
-            .slice(1) // except the default skin
-            .map((skin, index) => (
-              <img
-                key={index}
-                src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${skin.num}.jpg`}
-                alt='skins'
-              />
-            ))}
-          {/* <PaginationSlide slideContent= /> */}
+          <PaginationSlide
+            slideContent={{
+              name: `${championId}`,
+              values: [...Object.values({ ...championdetail.skins })].slice(1),
+            }}
+          />
         </div>
       </div>
     </div>

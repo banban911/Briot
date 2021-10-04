@@ -1,25 +1,89 @@
 .card_region_container {
   position: relative;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(180deg, #f0e6d2, #c89b3c);
-  border-style: solid;
-  border-width: 1px;
+  border: solid 1px transparent;
+  border-radius: 8px;
+  padding-bottom: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.card_region_bg {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+}
+
+.card_region_bg:after {
+  content: "";
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(1, 22, 19, 0.671);
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
 }
 
 .region_icon {
-  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
   position: absolute;
-  top: 50%;
+  top: 37%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: ease-in-out 0.2s;
 }
 
 .region_name {
   background-color: #010a13;
   color: #fff;
   text-align: center;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 2rem;
-  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
   padding: 1rem 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .region_name {
+    background-color: #010a13;
+    color: #fff;
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .card_region_bg {
+    width: 100%;
+    height: 130px;
+    background-size: cover;
+  }
+
+  .region_icon {
+    width: 10%;
+    height: 10%;
+    object-fit: contain;
+  }
+}
+
+.card_region_container:hover {
+  border-image-slice: 1;
+  border-style: solid;
+  border-width: 1px;
+  border-image-source: linear-gradient(180deg, #f0e6d2, #c89b3c);
+}
+
+.card_region_container:hover > .region_icon {
+  opacity: 0;
+}
+
+.card_region_container:hover > .card_region_bg {
+  filter: brightness(1.2);
+}
+
+.card_region_container:hover > .card_region_bg:after {
+  opacity: 1;
+  background-color: transparent;
 }
