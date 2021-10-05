@@ -72,7 +72,8 @@
   margin: 0 2rem 0 0.25rem;
   font-family: "Eco Coding W02 WGL4", monospace;
   letter-spacing: 2px;
-  writing-mode: sideways-lr;
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
   text-orientation: sideways;
   text-align: end;
 }
