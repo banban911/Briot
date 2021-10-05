@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Briot/static/css/main.9803ccf5.chunk.css",
+    "main.css": "/Briot/static/css/main.00c1f143.chunk.css",
     "main.js": "/Briot/static/js/main.94b340ce.chunk.js",
     "main.js.map": "/Briot/static/js/main.94b340ce.chunk.js.map",
     "runtime-main.js": "/Briot/static/js/runtime-main.02c36590.js",
@@ -8,7 +8,7 @@
     "static/js/2.1dd7a86f.chunk.js": "/Briot/static/js/2.1dd7a86f.chunk.js",
     "static/js/2.1dd7a86f.chunk.js.map": "/Briot/static/js/2.1dd7a86f.chunk.js.map",
     "index.html": "/Briot/index.html",
-    "static/css/main.9803ccf5.chunk.css.map": "/Briot/static/css/main.9803ccf5.chunk.css.map",
+    "static/css/main.00c1f143.chunk.css.map": "/Briot/static/css/main.00c1f143.chunk.css.map",
     "static/js/2.1dd7a86f.chunk.js.LICENSE.txt": "/Briot/static/js/2.1dd7a86f.chunk.js.LICENSE.txt",
     "static/media/ArrowIcon.bd23bedb.svg": "/Briot/static/media/ArrowIcon.bd23bedb.svg",
     "static/media/Dropdown.c2ff5aab.svg": "/Briot/static/media/Dropdown.c2ff5aab.svg",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.02c36590.js",
     "static/js/2.1dd7a86f.chunk.js",
-    "static/css/main.9803ccf5.chunk.css",
+    "static/css/main.00c1f143.chunk.css",
     "static/js/main.94b340ce.chunk.js"
   ]
 }
