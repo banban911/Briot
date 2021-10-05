@@ -1,4 +1,5 @@
 .news_container {
+  // position: relative;
   padding: 85px 2rem 0 2rem;
 }
 
@@ -7,11 +8,13 @@
   display: inline-block;
   position: absolute;
   width: 100%;
-  height: 50%;
+  height: 350px;
   top: 0;
   left: 0;
+
   z-index: -1;
   background-image: url("https://www.riotgames.com/assets/img/content/e99be4b4cd0b958b04fa3adceb5ce5ee/explore-hero-bg--large.jpg");
+  background-attachment: fixed;
   filter: blur(1.2);
   filter: brightness(0.9);
 }
@@ -21,6 +24,7 @@
   font-size: 1.8rem;
   font-weight: 600;
   color: rgb(109, 107, 107);
+  padding: 1rem 0 2.5rem 0;
 }
 
 .filter_showme_trigger {
@@ -47,11 +51,11 @@
   content: "";
   display: block;
   position: absolute;
-  width: 0;
+  width: 10%;
   height: 100%;
   border: none;
   bottom: -90%;
-  background-image: url("https://www.riotgames.com/assets/img/structure/a05cc7654fae18a3cb2be7ffde1de684/brush-line.svg");
+
   background-size: contain;
   background-repeat: no-repeat;
   border-bottom: solid 2.5px transparent;
@@ -60,5 +64,17 @@
 }
 
 .filter_showme_trigger:hover .button_trigger_title:before {
+  background-image: url("https://www.riotgames.com/assets/img/structure/a05cc7654fae18a3cb2be7ffde1de684/brush-line.svg");
   width: 78%;
+}
+
+@media screen and (max-width: 768px) {
+  .news_container:before {
+    content: "";
+    height: 250px;
+  }
+
+  .filter_showme {
+    padding: 1rem 0 1.5rem 0;
+  }
 }

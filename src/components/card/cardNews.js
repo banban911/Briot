@@ -1,9 +1,10 @@
 import React from "react";
 import "./CardNews.scss";
 import { Logo } from "../logo/Logo";
+import { ReactComponent as StoryIcon } from "../../assest/StoryIcon.svg";
 import { ReactComponent as PhotoIcon } from "../../assest/PhotoIcon.svg";
 import { ReactComponent as VideoIcon } from "../../assest/VideoIcon.svg";
-import { ReactComponent as StoryIcon } from "../../assest/StoryIcon.svg";
+import { ReactComponent as ArrowIcon } from "../../assest/ArrowIcon.svg";
 
 function CardLastestNews(props) {
   const { title, bgUrl } = props;
@@ -67,30 +68,84 @@ function CardNews(props) {
 }
 
 function CardNewsMain(props) {
-  const { img, time, title, summary, iconType } = props;
+  const { img, time, title, summary, iconType, isFeatured } = props;
   const renderSwitch = (param) => {
     switch (param.type) {
+      case "arrow":
+        return <ArrowIcon className='news_main_iconC' />;
       case "photo":
-        return <PhotoIcon />;
+        return <PhotoIcon className='news_main_iconC' />;
       case "video":
-        return <VideoIcon />;
+        return <VideoIcon className='news_main_iconC' />;
       default:
-        return <StoryIcon />;
+        return <StoryIcon className='news_main_iconC' />;
     }
   };
+
+  function validateTimestamp(time) {
+    const monthOutput = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dev",
+    ];
+
+    const monthInput = Number(time.split("").splice(0, 2).join(""));
+
+    const result = time.replace(
+      time.split("").splice(0, 2).join(""),
+      monthOutput[monthInput - 1]
+    );
+    return result.replaceAll("/", "-");
+  }
+
+  if (isFeatured === true) {
+    return (
+      <>
+        <div className='cardnews_featured_container'>
+          <div className='cardnews_featured_img'>
+            <img src={img} alt={title} />
+            <div className='cardnews_featured_icon'>
+              {renderSwitch(iconType)}
+            </div>
+          </div>
+          <div className='cardnews_featured_content_container d-flex'>
+            <div className='newstimestamp'>{validateTimestamp(time)}</div>
+            <div className='cardnews_main_featured_content'>
+              <div className='eyebow'>FEATURED</div>
+              <div className='cardnews_featured_title pt-3'>{title}</div>
+              <div className='cardnews_featured_summary d-none d-lg-block'>
+                {summary}
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
   return (
     <>
-      <div className='cardnews_main_container col-12 col-lg-6 col-md-6 px-3'>
+      <div className='cardnews_main_container px-3'>
         <div className='cardnews_main_img'>
           <img src={img} alt={title} />
           <div className='cardnews_main_icon'>{renderSwitch(iconType)}</div>
         </div>
         <div className='cardnews_main_content_container  d-flex'>
-          <div className='newstimestamp'>{time}</div>
-          <div className='cardnew_main_content'>
+          <div className='newstimestamp'>{validateTimestamp(time)}</div>
+          <div className='cardnews_main_content'>
             <div className='eyebow'>NEWS</div>
-            <div className='cardnews_main_title'>{title}</div>
-            <div className='cardnew_main_summary'>{summary}</div>
+            <div className='cardnews_main_title pt-3'>{title}</div>
+            <div className='cardnews_main_summary d-none d-lg-block'>
+              {summary}
+            </div>
           </div>
         </div>
       </div>
