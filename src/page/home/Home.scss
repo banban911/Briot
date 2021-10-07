@@ -16,6 +16,16 @@
   background-size: cover;
 }
 
+.game_posters {
+  background: rgb(17, 15, 15);
+  background: linear-gradient(
+    21deg,
+    rgba(17, 15, 15, 0.8828665255164566) 21%,
+    rgba(15, 15, 15, 0.9052754891018908) 100%,
+    rgba(23, 22, 22, 0.88) 100%
+  );
+}
+
 .video_intro {
   background: #252423;
 }

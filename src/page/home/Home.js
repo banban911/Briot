@@ -7,24 +7,63 @@ import { Btn } from "../../components/button/Btn";
 function Home() {
   const riotProductsInfo = [
     {
-      url: "https://www.riotgames.com/darkroom/550/ff82d668da3b61325a4d9a00f0d4bad2:a59ad8382089f371ec96952d202354e0/lol-key-art-2021-1920x1080-article-banner.jpg",
+      bg: "https://www.riotgames.com/darkroom/900/f9d37c368e03fe930db689c8877503ef:be16525176ab048e63dc8eada618bd07/lol-productimage.png",
+      description: "a team-based strategy game",
       name: "lol",
+      device: "window-apple",
+
+      title:
+        "https://www.riotgames.com/darkroom/350/a28dfa2308a772466c7d2018a87ac000:0e9fb5e8f3944bcd4375d6960d21962e/lol-logotype.png",
     },
     {
-      url: "https://www.riotgames.com/darkroom/550/5a42732c7f8e2e22fcc4ebf3c38b774b:5cb98767399c1b3425b4f23306232af4/tft-riot-site-card.jpg",
+      bg: "https://www.riotgames.com/darkroom/900/d066e7a6446f7f6d512df07e788fbc35:ef7cf9d03d8ab4f103f41188d2c31c0f/tft-card-bg-1800.jpg",
+      description: "a team-based strategy game",
       name: "tft",
+      title:
+        "https://www.riotgames.com/darkroom/350/2877a75d4539547a238b481e200edd9f:b10a003b28b89d37cc0e446bab19f206/tft-logotype-2021.png",
+      device: "window-apple-mobile,",
     },
     {
-      url: "https://www.riotgames.com/darkroom/550/0613e53fa1a76fb983ea221bd8301001:d2b98a734f92d17e8f0d564a07341eb8/wr-banner-ziggs-nov.jpg",
+      bg: "https://www.riotgames.com/darkroom/900/4d105e24b06ba594da0708fe8ded1314:977452c32d13752ded1552ea94d224ec/lol-wildrift-productimage.png",
+      description: "a team-based strategy game",
       name: "wildrift",
+      device: "mobile",
+      title:
+        "https://www.riotgames.com/darkroom/350/ac2e0c26a8f48cbaf0009eefb028b75f:8cddf84aea3fbcf72d02380c5d050e36/lol-wildrift-logotype.png",
     },
     {
-      url: "https://www.riotgames.com/darkroom/550/c8f72219add865817a06a68bc1864e56:c5d8662457e025b154dba649ebf2f028/lor-key-art.jpg",
+      bg: "https://www.riotgames.com/darkroom/900/838a15154baf4a1c3693f73b2bd00364:c5e1aa607a8967e2f976d6173a77f285/legends-of-runeterra-productimage.png",
+      description: "a team-based strategy game",
       name: "runterra",
+      device: "window-mobile",
+      title:
+        "https://www.riotgames.com/darkroom/350/3ae3913f7992eebc555ea77d1e17657b:d7874f08ba1161ac419a8f45dcfa0ae0/legends-of-runeterra-logotype.png",
     },
     {
-      url: "https://www.riotgames.com/darkroom/550/f25ec267bcc24b6fb692b422cf5dcfaa:286e4dc6c4ef661c714625a77945b6a4/riotgames-wide-k.jpg",
+      bg: "https://www.riotgames.com/darkroom/900/ac04c903e761168dfbf22893efd1ce48:fee52bb276d4ed80cf60bdb9d3c24c05/valorant-productimage.png",
+      description: "a team-based strategy game",
       name: "valorant",
+      device: "window",
+      title:
+        "https://www.riotgames.com/darkroom/350/fc4d867e755e5215833d94e88068b0ab:ead77c56e200894c762889c3cd81a2e1/valorant-logotype.png",
+    },
+    {
+      bg: "https://www.riotgames.com/darkroom/900/5da6384cfe9e607b3c589ffab2eb9f53:02f5f472e47354cbf103e66b02f975f4/convrgence-productimage.png",
+      description: "a team-based strategy game",
+      extension: "lol",
+      name: "convegence",
+      device: "",
+      title:
+        "https://www.riotgames.com/darkroom/350/89c736897feec6b49781ac1535e99c87:17c53feaa893cee07455c9c28dbac07f/convrgence-logotype.png",
+    },
+    {
+      bg: "https://www.riotgames.com/darkroom/900/1131e3bf9509d7ffb5d869e3aaf41fb5:7eb0b12d6ac787d19dfc1a99af7d24a3/ruined-king-productimage.png",
+      description: "a team-based strategy game",
+      extension: "lol",
+      name: "ruined king",
+      device: "",
+      title:
+        "https://www.riotgames.com/darkroom/350/a9ea1f2afe26cc0334851b9bc59c02e5:903dee05567e561084d1b6bfb64461d3/ruined-king-logotype.png",
     },
   ];
 
@@ -113,15 +152,26 @@ function Home() {
         </div>
 
         <div
-          className='container game_posters mt-4'
+          className='game_posters pt-4'
           // style={{ marginTop: "-10%" }} // Most Riot products
         >
-          <div className='row'>
-            {riotProductsInfo.map((item, index) => (
-              <div className='col-12 col-lg-6 col-sm-12'>
-                <CardMain url={item.url} name={item.name} key={index} />
-              </div>
-            ))}
+          <div className='container'>
+            <h1 style={{ color: "#fff" }}>OUR GAMES</h1>
+            <div className='row'>
+              {riotProductsInfo.map((item, index) => (
+                <div className='col-12 col-lg-6 col-sm-12'>
+                  <CardMain
+                    bg={item.bg}
+                    description={item.description.toUpperCase()}
+                    name={item.name}
+                    title={item.title}
+                    extension={item.extension}
+                    device={item.device}
+                    key={index}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

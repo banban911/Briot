@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useRouteMatch } from "react-router-dom";
 import CardChampion from "../../components/card/CardChampion";
 import "./Lol.scss";
-// import ChampionJSON from "../../../../src/Champion.json";
 const axios = require("axios");
 function Champions() {
   const { url } = useRouteMatch();
@@ -12,9 +11,13 @@ function Champions() {
     const fetchChampion = async () => {
       try {
         const response = await axios.get(
-          "https://ddragon.leagueoflegends.com/cdn/11.18.1/data/en_US/champion.json"
+          "https://ddragon.leagueoflegends.com/cdn/11.20.1/data/en_US/champion.json"
         );
         console.log(Object.values(response.data));
+        // window.localStorage.setItem(
+        //   "datadragonChampion",
+        //   Object.values(response.data)
+        // );
         setChampion(Object.values(response.data.data));
       } catch (error) {
         console.error(error);

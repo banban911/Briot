@@ -25,6 +25,13 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .news_item_content h4 {
+    -webkit-line-clamp: 1;
+    font-size: 1rem;
+  }
+}
+
 .news_item {
   height: 25%;
   // maxHeight: "120px"
@@ -132,8 +139,8 @@
 
 .cardnews_featured_img {
   position: relative;
-  margin-left: -130px;
-  margin-right: -130px;
+  margin-left: -11%;
+  margin-right: -11%;
   overflow: hidden;
 }
 
@@ -156,8 +163,8 @@
   width: 50px;
   height: 50px;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 1%;
+  left: 1%;
   z-index: 2;
 }
 
@@ -172,7 +179,7 @@
 
 .cardnews_featured_title {
   font-size: 2.5rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .cardnews_featured_summary {

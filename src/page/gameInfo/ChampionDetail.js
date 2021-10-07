@@ -30,7 +30,9 @@ function ChampionDetail() {
       className='ChampionDetail_container'
       style={{
         paddingTop: "85px",
-        backgroundImage: `url('https://am-a.akamaihd.net/image?f=https%3A%2F%2Funiverse-meeps.leagueoflegends.com%2Fv1%2Fassets%2Fimages%2Fbard-color-splash.jpg&resize=1800:')`,
+        // backgroundImage: `url('https://am-a.akamaihd.net/image?f=https%3A%2F%2Funiverse-meeps.leagueoflegends.com%2Fv1%2Fassets%2Fimages%2Fbard-color-splash.jpg&resize=1800:')`,
+        background:
+          "rgb(3,2,23) linear-gradient(90deg, rgba(3,2,23,0.9699230033810399) 0%, rgba(11,11,11,0.9783263647255778) 100%)",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
@@ -89,7 +91,6 @@ function ChampionDetail() {
               color: "rgb(103, 71, 31)",
               background:
                 "rgba(0, 0, 0, 0) -webkit-linear-gradient(bottom, rgb(103, 71, 31), rgb(203, 172, 98)) repeat scroll 0% 0% padding-box text",
-              webkitTextFillColor: "transparent",
               fontSize: "6em",
               fontWeight: "bold",
               letterSpacing: "0.25rem",

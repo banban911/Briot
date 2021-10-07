@@ -1,5 +1,9 @@
+.error_page {
+  position: relative;
+}
+
 .notif {
-  // background-color: rgba(31, 30, 30, 0.7);
+  position: relative;
   background: rgb(23, 22, 22);
   background: linear-gradient(
     90deg,
@@ -15,9 +19,6 @@
     rgba(23, 22, 22, 0.3) 97%,
     rgba(23, 22, 22, 0) 100%
   );
-  font-size: large;
-  margin: 25.5% auto;
-  width: 100%;
   color: #fff;
   text-align: center;
   animation: moveUp 2s forwards;
@@ -29,6 +30,10 @@
   }
 }
 
+.returnBtn {
+  // background-color: aquamarine;
+}
+
 @keyframes moveUp {
   from {
     opacity: 0;
@@ -37,45 +42,21 @@
 
   to {
     opacity: 1;
-    transform: translateY(-50%);
+    transform: translateY(150%);
   }
 }
 
-.eareal-404 {
-  width: 400px;
-  top: 55px;
-  left: 60%;
+.page-404 {
+  position: absolute;
+  bottom: 0%;
+  right: 5%;
+  width: 500px;
 }
-
 @media screen and (max-width: 768px) {
-  .notif {
-    // background-color: rgba(31, 30, 30, 0.7);
-    background: rgb(23, 22, 22);
-    background: linear-gradient(
-      90deg,
-      rgba(23, 22, 22, 0) 0%,
-      rgba(23, 22, 22, 0.3) 7%,
-      rgba(23, 22, 22, 0.65) 15%,
-      rgba(23, 22, 22, 0.75) 25%,
-      rgba(23, 22, 22, 0.85) 40%,
-      rgba(23, 22, 22, 0.9) 50%,
-      rgba(36, 41, 38, 0.85) 60%,
-      rgba(48, 58, 52, 0.75) 75%,
-      rgba(62, 79, 70, 0.65) 85%,
-      rgba(23, 22, 22, 0.3) 97%,
-      rgba(23, 22, 22, 0) 100%
-    );
-    font-size: 1.2rem;
-    margin: 25.5% auto;
-    width: 100%;
-    color: #fff;
-    text-align: center;
-    animation: moveUp 2s forwards;
-    transition: all 0.3s 0.3s;
-
-    h1 {
-      font-weight: bold;
-      font-size: 0.7rem;
-    }
+  .page-404 {
+    position: absolute;
+    top: 59%;
+    right: 0%;
+    width: 245px;
   }
 }

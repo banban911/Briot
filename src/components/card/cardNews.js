@@ -83,7 +83,7 @@ function CardNewsMain(props) {
   };
 
   function validateTimestamp(time) {
-    const monthOutput = [
+    const monthText = [
       "Jan",
       "Feb",
       "Mar",
@@ -98,13 +98,15 @@ function CardNewsMain(props) {
       "Dev",
     ];
 
-    const monthInput = Number(time.split("").splice(0, 2).join(""));
+    const inputMonthParse = Number(time.split("").slice(0, 2).join(""));
 
-    const result = time.replace(
-      time.split("").splice(0, 2).join(""),
-      monthOutput[monthInput - 1]
-    );
-    return result.replaceAll("/", "-");
+    const outputMonth = monthText[inputMonthParse - 1];
+
+    const outputDate = time.split("").slice(3, 5).join("");
+
+    const outputYear = time.split("").slice(6, 10).join("");
+
+    return `${outputMonth} ${outputDate}, ${outputYear}`;
   }
 
   if (isFeatured === true) {

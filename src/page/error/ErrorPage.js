@@ -4,27 +4,36 @@ import "./ErrorPage.scss";
 
 function ErrorPage() {
   return (
-    <div className='error_page'>
-      <div className='notif position-absolute py-4'>
-        <img
-          className='eareal-404 position-absolute'
-          width='400'
-          height='423'
-          src='https://rerollcdn.com/home/Ezreal.png'
-          alt='loading...'
-        />
-        <h2>
-          404: PAGE NOT FOUND
-          <br />
-        </h2>
-        <h1>The page hasn't been ready yet</h1>
-        <Link className='my-3 btn btn-warning py-3 px-4' to='/'>
-          Return homepage
+    <div
+      className='error_page'
+      style={{
+        backgroundImage:
+          "url(https://universe.leagueoflegends.com/images/trendingBackground.jpg)",
+        backgroundSize: "cover",
+        height: "100vh",
+      }}
+    >
+      <div className='notif py-3'>
+        <h2>404: PAGE NOT FOUND</h2>
+        <h5 className='mt-2 mb-4'>The page hasn't been ready yet</h5>
+        <Link className='returnBtn my-4' to='/'>
+          <button
+            className=' px-4 py-3'
+            style={{
+              backgroundColor: "transparent",
+              color: "rgb(14, 150, 138)",
+              fontWeight: "bold",
+              border: "1px solid rgb(14, 150, 138)",
+            }}
+          >
+            Return homepage
+          </button>
         </Link>
       </div>
       <img
-        src='https://universe.leagueoflegends.com/images/trendingBackground.jpg'
-        alt='loading...'
+        className='page-404'
+        src='https://rerollcdn.com/home/Ezreal.png'
+        alt='ezreal'
       />
     </div>
   );
