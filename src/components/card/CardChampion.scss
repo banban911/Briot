@@ -19,6 +19,15 @@
   height: 50px;
 }
 
+.tags {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  // font-size: 0.35rem !important;
+}
+
 @media screen and (max-width: 768px) {
   .champion_logo {
     height: 150px;
@@ -27,11 +36,6 @@
   .championCard_footer {
     padding: 0.15rem 0 !important;
     .tags {
-      display: -webkit-box;
-      -webkit-line-clamp: 1;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
       font-size: 0.35rem !important;
     }
 

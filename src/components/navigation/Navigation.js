@@ -8,33 +8,30 @@ import { ReactComponent as LogoText } from "../../assest/LogoText.svg";
 import { CardItemBig, CardItemSmall } from "../card/CardHeader";
 import { Logo } from "../logo/Logo";
 
-// const { path, url } = useRouteMatch();
-
 function Navigation() {
-  const onScrollRef = useRef();
+  const headerRef = useRef();
   const handleScrollNav = () => {
-    const headerHeight = document.querySelector(".header").clientHeight;
+    const headerHeight = 0;
     let currScrollPos =
       window.pageYOffset || document.documentElement.scrollTop;
     if (currScrollPos > headerHeight) {
-      onScrollRef.current.style.backgroundColor = "rgba(15, 15, 15, 0.85)";
+      headerRef.current.style.backgroundColor = "rgba(15, 15, 15, 0.85)";
     } else {
-      onScrollRef.current.style.backgroundColor = "transparent";
+      headerRef.current.style.backgroundColor = "transparent";
     }
-    // prevScrollPos = currScrollPos;
   };
 
   window.addEventListener("scroll", handleScrollNav);
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
   function toggleDropdown() {
-    setIsOpen(!isOpen);
+    setIsDropdownOpen(!isDropdownOpen);
   }
 
   function closeDropdown() {
-    setIsOpen(false);
+    setIsDropdownOpen(false);
   }
 
   function handleMenu() {
@@ -77,7 +74,7 @@ function Navigation() {
   return (
     <header
       className='header w-100 px-3 d-flex align-items-center'
-      ref={onScrollRef}
+      ref={headerRef}
     >
       <div className='navigation d-flex justify-content-between justify-content-lg-start justify-content-md-start justify-content-sm-between  w-100  align-items-center position-relative'>
         <div className='logo position-relative'>
@@ -93,13 +90,15 @@ function Navigation() {
             />
           </div>
           <div
-            className={`underlay ${isOpen === true ? "" : "d-none w-0"}`}
+            className={`underlay ${
+              isDropdownOpen === true ? "" : "d-none w-0"
+            }`}
             onClick={closeDropdown}
           ></div>
 
           <div // riot products dropdown container
             className={`riot_products position-absolute align-items-center px-2 px-lg-4 px-md-3 px-sm-2  pb-4 overflow-hidden ${
-              isOpen === true ? "open" : "close"
+              isDropdownOpen === true ? "open" : "close"
             }`}
           >
             <div className='riot_games'>

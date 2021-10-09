@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 
 import { useParams } from "react-router-dom";
 import { RadarChart } from "../../components/chart/Chart";
-import { ChampIcon } from "../../components/icons/Icons";
 import PaginationSlide from "../../components/slide/PaginationSlide";
 import "./Lol.scss";
 const axios = require("axios");
@@ -37,33 +36,6 @@ function ChampionDetail() {
         backgroundSize: "cover",
       }}
     >
-      <div
-        className='filter_search ps-3'
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
-      >
-        <form className='search d-flex p-2'>
-          <label for='search_nav'>
-            <ChampIcon />
-          </label>
-
-          <input
-            className='ms-3'
-            type='text'
-            name='search_nav'
-            id='search_nav'
-            placeholder='Enter a champion name...'
-            style={{
-              backgroundColor: "transparent",
-              border: "none",
-              color: "#fff",
-              width: "200px",
-            }}
-          />
-          {/* <div type='submit' className='btn primary-btn text-center'>
-            Search
-          </div> */}
-        </form>
-      </div>
       <div
         className='champion_poster position-relative'
         style={{

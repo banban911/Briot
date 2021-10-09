@@ -36,7 +36,7 @@ function CardChampion(props) {
           }}
         >
           <div
-            className='tags pt-0 pt-md-3 pt-sm-0'
+            className='tags pt-0 pt-md-3 pt-sm-0 px-2'
             style={{
               fontSize: "0.8rem",
               fontWeight: "600",

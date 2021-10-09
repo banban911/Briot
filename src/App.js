@@ -4,7 +4,7 @@ import Layout from "./layout/Layout";
 import Home from "./page/home/Home";
 import News from "./page/news/News";
 import ErrorPage from "./page/error/ErrorPage";
-import Download from "./page/download/Lol";
+import Download from "./page/download/Download";
 import SupportBugReport from "./page/support/BugReport";
 import SupportPlayerReport from "./page/support/PlayerReport";
 import SupportPayment from "./page/support/Payment";
