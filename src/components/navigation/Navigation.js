@@ -294,13 +294,6 @@ function Navigation() {
               </ul>
             </div>
           </li>
-          <li className='link_item_mobile py-3 w-100'>
-            <div>
-              <NavLink onClick={handleMenu} to='download'>
-                Download
-              </NavLink>
-            </div>
-          </li>
         </ul>
         <div
           className='hbgMenu d-block d-lg-none d-md-none d-sm-block'

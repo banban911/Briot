@@ -116,7 +116,7 @@ function LeagueOfLegend() {
         Show Me
         <button className='filter_showme_trigger ps-3 d-flex align-items-center'>
           <div className='button_trigger_title py-1'>Everything</div>
-          <i class='bi bi-chevron-down ms-2'></i>
+          <i className='bi bi-chevron-down ms-2'></i>
         </button>
       </div>
       <div className='cardnews_main row mb-3'>

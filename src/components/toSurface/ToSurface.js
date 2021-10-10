@@ -10,7 +10,7 @@ function ToSurface() {
   return (
     <div>
       <button>
-        <i class='bi bi-chevron-up' onClick={toTop}></i>
+        <i className='bi bi-chevron-up' onClick={toTop}></i>
       </button>
     </div>
   );

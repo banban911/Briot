@@ -74,7 +74,7 @@ function Download() {
               "url(https://cdn.vn.garenanow.com/web/lol-product/LOLwebsite/img/banner/download1.jpg)",
           }}
         >
-          <button class='download_btn'>Download</button>
+          <button className='download_btn'>Download</button>
           <h6>As browser speed</h6>
         </div>
         <div
@@ -90,7 +90,7 @@ function Download() {
       </div>
       <div className='update_package container w-100 my-5'>
         <h4 className='py-2' style={{ color: "#b59668", fontWeight: "600" }}>
-          <i class='bi bi-box me-2'></i>
+          <i className='bi bi-box me-2'></i>
           Update Packages
         </h4>
         <div className='table-container'>
@@ -116,7 +116,7 @@ function Download() {
       </div>
       <div className='recommendation container my-5'>
         <h4 className='py-2' style={{ color: "#b59668", fontWeight: "600" }}>
-          <i class='bi bi-sliders me-2'></i>
+          <i className='bi bi-sliders me-2'></i>
           Recommended Configuration
         </h4>
         <div className='table-container'>

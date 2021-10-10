@@ -25,7 +25,13 @@
   font-weight: 600;
 
   li {
+    display: flex;
     cursor: pointer;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   li:hover {
@@ -39,7 +45,9 @@ input:focus {
 }
 
 .filter_role_item.active {
-  border-bottom: #75e0e6 1px solid;
+  background-color: rgba(rgb(129, 112, 89), 0.7);
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  transition: all 0.2s ease-in-out;
 }
 
 .form-select {

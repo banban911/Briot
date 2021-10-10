@@ -56,9 +56,9 @@ function CardMain(props) {
       <button>
         <Link to={`./${name}`}>
           {extension ? (
-            <i class='bi bi-layers'></i>
+            <i className='bi bi-layers'></i>
           ) : (
-            <i class='bi bi-hurricane'></i>
+            <i className='bi bi-hurricane'></i>
           )}
         </Link>
       </button>

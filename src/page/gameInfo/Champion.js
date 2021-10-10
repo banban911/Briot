@@ -8,8 +8,40 @@ const axios = require("axios");
 function Champions() {
   const { url } = useRouteMatch();
   const [champion, setChampion] = useState([]);
-  // const anyRole = ;
   const [filterRole, setFilterRole] = useState("");
+  const [itemNum, setItemNum] = useState(15);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+  // load 15 more champion once
+  const loadmore = () => {
+    const newItemNum = itemNum + 15;
+    setItemNum(newItemNum);
+  };
+
+  //toggle active tab in filtering as champion role
+  const toogleTabActive = () => {
+    const roles = document.querySelectorAll(".filter_role_item");
+
+    roles.forEach((role) => {
+      role.onclick = function () {
+        let currentActive = document.querySelector(".filter_role_item.active");
+        if (role === currentActive) {
+          return;
+        } else {
+          currentActive.classList.remove("active");
+          role.classList.add("active");
+        }
+      };
+    });
+  };
+
+  // get saerch term
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+    event.preventDefault();
+    console.log(searchTerm);
+  };
 
   useEffect(() => {
     const fetchChampion = async () => {
@@ -17,25 +49,28 @@ function Champions() {
         const response = await axios.get(
           "https://ddragon.leagueoflegends.com/cdn/11.20.1/data/en_US/champion.json"
         );
-        console.log(Object.values(response.data));
-        // window.localStorage.setItem(
-        //   "datadragonChampion",
-        //   Object.values(response.data)
-        // );
-        setChampion(Object.values(response.data.data));
+
+        const championData = Object.values(response.data.data);
+        if (searchTerm !== "") {
+          const rerults = championData.filter((item) =>
+            item.id.toLowerCase().includes(searchTerm.toLowerCase())
+          );
+          setSearchResults(rerults);
+          setChampion(rerults);
+          console.log(searchResults);
+        } else {
+          setChampion(championData);
+        }
       } catch (error) {
         console.error(error);
       }
     };
-    fetchChampion();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
-  const [itemNum, setItemNum] = useState(15);
-  const loadmore = () => {
-    const newItemNum = itemNum + 15;
-    setItemNum(newItemNum);
-  };
+    // execute functions
+    fetchChampion();
+    toogleTabActive();
+  }, [searchTerm, searchResults]);
+
   return (
     <div className='lol'>
       <div
@@ -46,7 +81,7 @@ function Champions() {
           className='search d-flex py-2'
           style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
         >
-          <label for='search_nav'>
+          <label>
             <ChampIcon />
           </label>
 
@@ -54,6 +89,8 @@ function Champions() {
             className='ms-3'
             type='text'
             name='search_nav'
+            value={searchTerm}
+            onChange={handleChange}
             id='search_nav'
             placeholder='Find champion...'
             style={{
@@ -65,9 +102,9 @@ function Champions() {
           />
         </form>
         {/* navbar desktop min-wdith: 768px*/}
-        <ul className='champion_trait position-relative justify-content-between align-items-center flex-column flex-md-row flex-sm-column d-none d-md-flex d-sm-none'>
+        <ul className='champion_trait position-relative justify-content-around align-items-center flex-column flex-md-row flex-sm-column d-none d-md-flex d-sm-none'>
           <li
-            clasName='filter_role_item active'
+            className='filter_role_item active'
             onClick={() => {
               setFilterRole("");
             }}
@@ -76,7 +113,7 @@ function Champions() {
           </li>
 
           <li
-            clasName='filter_role_item'
+            className='filter_role_item'
             onClick={() => {
               setFilterRole("Assassin");
             }}
@@ -84,7 +121,7 @@ function Champions() {
             Assassin
           </li>
           <li
-            clasName='filter_role_item'
+            className='filter_role_item'
             onClick={() => {
               setFilterRole("Fighter");
             }}
@@ -92,7 +129,7 @@ function Champions() {
             Fighter
           </li>
           <li
-            clasName='filter_role_item'
+            className='filter_role_item'
             onClick={() => {
               setFilterRole("Mage");
             }}
@@ -100,7 +137,7 @@ function Champions() {
             Mage
           </li>
           <li
-            clasName='filter_role_item'
+            className='filter_role_item'
             onClick={() => {
               setFilterRole("Marksman");
             }}
@@ -108,7 +145,7 @@ function Champions() {
             Marksman
           </li>
           <li
-            clasName='filter_role_item'
+            className='filter_role_item'
             onClick={() => {
               setFilterRole("Support");
             }}
@@ -116,7 +153,7 @@ function Champions() {
             Support
           </li>
           <li
-            clasName='filter_role_item'
+            className='filter_role_item'
             onClick={() => {
               setFilterRole("Tank");
             }}
@@ -127,7 +164,6 @@ function Champions() {
         {/**navbar in mobile screen  */}
         <select className='form-select my-2 d-block d-md-none d-sm-block'>
           <option
-            selected
             value='All'
             className='filter_role_item'
             onClick={() => {
@@ -146,7 +182,7 @@ function Champions() {
           </option>
           <option
             value='Fighter'
-            clasName='filter_role_item'
+            className='filter_role_item'
             onClick={() => {
               setFilterRole("Fighter");
             }}
@@ -155,7 +191,7 @@ function Champions() {
           </option>
           <option
             value='Mage'
-            clasName='filter_role_item'
+            className='filter_role_item'
             onClick={() => {
               setFilterRole("Mage");
             }}
@@ -164,7 +200,7 @@ function Champions() {
           </option>
           <option
             value='Marksman'
-            clasName='filter_role_item'
+            className='filter_role_item'
             onClick={() => {
               setFilterRole("Marksman");
             }}
@@ -173,7 +209,7 @@ function Champions() {
           </option>
           <option
             value='Support'
-            clasName='filter_role_item'
+            className='filter_role_item'
             onClick={() => {
               setFilterRole("Support");
             }}
@@ -182,7 +218,7 @@ function Champions() {
           </option>
           <option
             value='Tank'
-            clasName='filter_role_item'
+            className='filter_role_item'
             onClick={() => {
               setFilterRole("Tank");
             }}
