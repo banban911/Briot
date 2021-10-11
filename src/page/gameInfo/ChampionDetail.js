@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 
 import { useParams } from "react-router-dom";
 import { RadarChart } from "../../components/chart/Chart";
-import PaginationSlide from "../../components/slide/PaginationSlide";
 import "./Lol.scss";
 const axios = require("axios");
 function ChampionDetail() {
@@ -39,38 +38,11 @@ function ChampionDetail() {
       <div
         className='champion_poster position-relative'
         style={{
-          backgroundImage: `url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_0.jpg')`,
-          backgroundSize: "cover",
-          // backgroundColor:
-          //   "linear-gradient(180deg,rgba(0,0,0,0) 65%,rgba(10,10,12,.1) 70%,#0a0a0c 90%)",
-          // backgroundBlendMode: "multiply",
-          backgroundRepeat: "no-repeat",
-          width: "100%",
-          height: "70vh",
+          backgroundImage: `url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_0.jpg")`,
         }}
       >
-        <div
-          className='champion_name position-absolute text-center w-100'
-          style={{
-            bottom: "0",
-            background: "rgba(0, 0, 0, 0.8)",
-            fontFamily: "'Playfair Display', serif",
-          }}
-        >
-          <span
-            className='mb-0'
-            style={{
-              color: "rgb(103, 71, 31)",
-              background:
-                "rgba(0, 0, 0, 0) -webkit-linear-gradient(bottom, rgb(103, 71, 31), rgb(203, 172, 98)) repeat scroll 0% 0% padding-box text",
-              fontSize: "6em",
-              fontWeight: "bold",
-              letterSpacing: "0.25rem",
-              textTransform: "uppercase",
-            }}
-          >
-            {championdetail.name}
-          </span>
+        <div className='champion_name position-absolute text-center w-100'>
+          <span className='mb-0'>{championdetail.name}</span>
           <div className='d-flex justify-content-center'>
             <img
               src='https://universe.leagueoflegends.com/images/t1HeaderDivider.png'
@@ -93,27 +65,18 @@ function ChampionDetail() {
         <Link></Link>
       </div> */}
       <div
-        className='d-flex p-2'
+        className='d-flex flex-column flex-md-row flex-sm-column p-2'
         style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
       >
-        <div className='d-flex flex-column'>
-          <div className='champion_feature p-3' style={{ flex: "0 0 40%" }}>
-            <RadarChart info={{ ...championdetail.info }} />
-          </div>
-          <div className='lore'>
-            <p>{championdetail.lore}</p>
-          </div>
-        </div>
         <div
-          className='skins d-flex'
-          style={{ flex: "0 0 60%", overflow: "hidden" }}
+          className='champion_feature d-flex justify-content-center p-3'
+          // style={{ flex: "0 0 40%" }}
         >
-          <PaginationSlide
-            slideContent={{
-              name: `${championId}`,
-              values: [...Object.values({ ...championdetail.skins })].slice(1),
-            }}
-          />
+          <RadarChart info={{ ...championdetail.info }} />
+        </div>
+        <div className='lore d-flex flex-column align-items-center'>
+          <h3>Origin</h3>
+          <p>{championdetail.lore}</p>
         </div>
       </div>
     </div>

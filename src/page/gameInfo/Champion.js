@@ -91,7 +91,6 @@ function Champions() {
             name='search_nav'
             value={searchTerm}
             onChange={handleChange}
-            id='search_nav'
             placeholder='Find champion...'
             style={{
               backgroundColor: "transparent",
@@ -173,10 +172,10 @@ function Champions() {
             All
           </option>
           <option
+            value='Assassin'
             onClick={() => {
               setFilterRole("Assassin");
             }}
-            value='Assassin'
           >
             Assassin
           </option>

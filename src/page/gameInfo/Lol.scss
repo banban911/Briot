@@ -18,6 +18,32 @@
   background-image: url("https://universe.leagueoflegends.com/images/latestBg.jpg");
 }
 
+.champion_poster {
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 70vh;
+  background-size: cover;
+}
+
+.champion_name {
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  font-family: "Playfair Display", serif;
+
+  span {
+    color: rgb(103, 71, 31);
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(
+        bottom,
+        rgb(103, 71, 31),
+        rgb(203, 172, 98)
+      ) repeat scroll 0% 0% padding-box text;
+    font-size: 6em;
+    font-weight: bold;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+  }
+}
+
 .champion_trait {
   flex: 1;
   margin: 0 10%;
@@ -45,7 +71,7 @@ input:focus {
 }
 
 .filter_role_item.active {
-  background-color: rgba(rgb(129, 112, 89), 0.7);
+  background-color: rgba(71, 157, 161, 0.78);
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
   transition: all 0.2s ease-in-out;
 }
@@ -54,8 +80,36 @@ input:focus {
   padding: 0;
   margin: 0;
   border: none;
+  margin-left: -40px;
 }
 .form-select:focus {
   border: none;
   box-shadow: none;
+}
+
+// Champion Detail styles
+
+.lore {
+  color: tan;
+  height: inherit;
+  margin: 5% 8%;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  font-family: "raleway", sans-serif;
+}
+
+// .champion_feature {
+// }
+
+@media screen and (max-width: 768px) {
+  .champion_poster {
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50vh;
+    background-position: center;
+  }
+
+  .champion_name span {
+    font-size: 3em;
+  }
 }
