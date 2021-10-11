@@ -99,14 +99,28 @@ function Home() {
   ];
   return (
     <>
-      <div className='intro_banner'></div>
+      <div className='intro_banner position-relative'>
+        <div
+          className='lastest position-absolute'
+          style={{
+            top: "35%",
+            left: "5%",
+            maxWidth: "400px",
+          }}
+        >
+          <img
+            src='https://www.riotgames.com/darkroom/500/f22945cd5136b8e1bc52889faa3b9060:469eefe1668cce16289afc1c508b7550/arcane-logo.png'
+            alt='Arane'
+          />
+        </div>
+      </div>
       <div
         className='homepage position-relative'
         style={{ fontFamily: "'Raleway', sans-serif" }}
       >
         <div className='news-intro position-relative'>
           <div
-            className='news-intro-container container pb-3 mb-4' // Lastest Riot news
+            className='news-intro-container container pb-5 mb-5' // Lastest Riot news
           >
             <div className='py-3 d-flex justify-content-lg-between justify-content-md-lg justify-content-sm-center justify-content-center align-items-center'>
               <h1
