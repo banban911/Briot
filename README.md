@@ -1,4 +1,4 @@
-# First ReactJs-based website I create when learning front-end web dev
+## First ReactJs-based website I create when learning front-end web dev
 # Inpsired by the Riots, LOL.vn and LOL.universe websites
 # Data from https://developer.riotgames.com/ 
 
