@@ -83,7 +83,7 @@ function Navigation() {
             style={{ padding: "calc((84.75px - 38.17px)/2) 0" }}
             onClick={toggleDropdown}
           >
-            <Logo width='2.5rem' bgColor='#fff' color='#000' />
+            <Logo width='2.25rem' bgColor='#fff' color='#000' />
             <Dropdown
               className='ms-2 d-none d-lg-block d-md-block d-sm-none'
               style={{ width: "10px", height: "16px" }}
