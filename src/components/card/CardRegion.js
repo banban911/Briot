@@ -1,5 +1,5 @@
 import React from "react";
-import "./CardRegion.scss";
+import "./Card.scss";
 function CardRegion({ regionBg, regionIcon, regionName }) {
   return (
     <div className='card_region_container'>

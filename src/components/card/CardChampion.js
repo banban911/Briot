@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ChampIcon } from "../icons/Icons";
-import "./CardChampion.scss";
+import "./Card.scss";
 function CardChampion(props) {
   const { name, tags, img, url } = props;
 

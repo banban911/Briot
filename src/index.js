@@ -10,7 +10,3 @@ ReactDOM.render(
   </HashRouter>,
   document.getElementById("root")
 );
-
-// if (moudle.hot) {
-//   moudle.hot.accept();
-// }

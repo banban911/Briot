@@ -1,5 +1,5 @@
 import React from "react";
-import "./CardNews.scss";
+import "./Card.scss";
 import { Logo } from "../logo/Logo";
 import { ReactComponent as StoryIcon } from "../../assest/StoryIcon.svg";
 import { ReactComponent as PhotoIcon } from "../../assest/PhotoIcon.svg";

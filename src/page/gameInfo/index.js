@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useRouteMatch, Switch, Route } from "react-router-dom";
 import { ChampIcon, RegionIcon, MapIcon } from "../../components/icons/Icons";
 import Champion from "./Champion";
-import Map from "./Map";
+import Media from "./Media";
 import Region from "./Region";
 import "./Lol.scss";
 
@@ -22,7 +22,7 @@ function Lol() {
         </li>
         <li>
           <Link
-            to={`${url}/map`}
+            to={`${url}/media`}
             className='d-flex align-items-center flex-column mx-4 px-3'
           >
             <MapIcon />
@@ -39,7 +39,7 @@ function Lol() {
       </ul>
       <Switch>
         <Route path={`${path}/champion`} component={Champion}></Route>
-        <Route path={`${path}/map`} component={Map}></Route>
+        <Route path={`${path}/media`} component={Media}></Route>
         <Route path={`${path}/region`} component={Region}></Route>
       </Switch>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import "./CardMain.scss";
+import "./Card.scss";
 import { Link } from "react-router-dom";
 function CardMain(props) {
   const { title, bg, name, description, extension, device } = props;

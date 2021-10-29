@@ -71,6 +71,10 @@ function Champions() {
     toogleTabActive();
   }, [searchTerm, searchResults]);
 
+  const handleSelectRole = (e) => {
+    setFilterRole(e.target.value);
+  };
+
   return (
     <div className='lol'>
       <div
@@ -161,67 +165,27 @@ function Champions() {
           </li>
         </ul>
         {/**navbar in mobile screen  */}
-        <select className='form-select my-2 d-block d-md-none d-sm-block'>
-          <option
-            value='All'
-            className='filter_role_item'
-            onClick={() => {
-              setFilterRole("");
-            }}
-          >
+        <select
+          className='form-select my-2 d-block d-md-none d-sm-block'
+          onChange={handleSelectRole}
+        >
+          <option value='All' className='filter_role_item'>
             All
           </option>
-          <option
-            value='Assassin'
-            onClick={() => {
-              setFilterRole("Assassin");
-            }}
-          >
-            Assassin
-          </option>
-          <option
-            value='Fighter'
-            className='filter_role_item'
-            onClick={() => {
-              setFilterRole("Fighter");
-            }}
-          >
+          <option value='Assassin'>Assassin</option>
+          <option value='Fighter' className='filter_role_item'>
             Fighter
           </option>
-          <option
-            value='Mage'
-            className='filter_role_item'
-            onClick={() => {
-              setFilterRole("Mage");
-            }}
-          >
+          <option value='Mage' className='filter_role_item'>
             Mage
           </option>
-          <option
-            value='Marksman'
-            className='filter_role_item'
-            onClick={() => {
-              setFilterRole("Marksman");
-            }}
-          >
+          <option value='Marksman' className='filter_role_item'>
             Marksman
           </option>
-          <option
-            value='Support'
-            className='filter_role_item'
-            onClick={() => {
-              setFilterRole("Support");
-            }}
-          >
+          <option value='Support' className='filter_role_item'>
             Support
           </option>
-          <option
-            value='Tank'
-            className='filter_role_item'
-            onClick={() => {
-              setFilterRole("Tank");
-            }}
-          >
+          <option value='Tank' className='filter_role_item'>
             Tank
           </option>
         </select>

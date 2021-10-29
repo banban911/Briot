@@ -113,3 +113,31 @@ input:focus {
     font-size: 3em;
   }
 }
+
+//Region style
+.region:after {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: aquamarine;
+}
+
+.card_regions {
+  flex-wrap: wrap;
+}
+
+// .card_regions > * {
+//   flex: 0 0 25%;
+// }
+
+// @media screen and (max-width: 768px) {
+//   .card_regions > * {
+//     flex: 0 0 100%;
+//   }
+// }
+
+//Media styles
+
+.cardmedia_container {
+  width: 100%;
+}

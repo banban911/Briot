@@ -1,5 +1,5 @@
 import React from "react";
-import "./CardHeader.scss";
+import "./Card.scss";
 function CardItemBig(props) {
   const { url, content } = props;
 

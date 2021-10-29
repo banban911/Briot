@@ -1,6 +1,6 @@
 import React from "react";
 import CardRegion from "../../components/card/CardRegion";
-import "./Region.scss";
+import "./Lol.scss";
 function Region() {
   const regionInfo = [
     {
