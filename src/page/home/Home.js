@@ -4,6 +4,7 @@ import "./Home.scss";
 import { CardMain } from "../../components/card/CardMain";
 import { CardLastestNews, CardNews } from "../../components/card/cardNews";
 import { Btn } from "../../components/button/Btn";
+import LazyImage from "../../components/hooks/LazyImage";
 function Home() {
   const riotProductsInfo = [
     {
@@ -105,10 +106,11 @@ function Home() {
           style={{
             top: "35%",
             left: "5%",
+            right: "5%",
             maxWidth: "400px",
           }}
         >
-          <img
+          <LazyImage
             src='https://www.riotgames.com/darkroom/500/f22945cd5136b8e1bc52889faa3b9060:469eefe1668cce16289afc1c508b7550/arcane-logo.png'
             alt='Arane'
           />

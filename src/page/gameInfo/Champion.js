@@ -8,7 +8,7 @@ const axios = require("axios");
 function Champions() {
   const { url } = useRouteMatch();
   const [champion, setChampion] = useState([]);
-  const [filterRole, setFilterRole] = useState("");
+  const [filterRole, setFilterRole] = useState("All");
   const [itemNum, setItemNum] = useState(15);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -109,7 +109,7 @@ function Champions() {
           <li
             className='filter_role_item active'
             onClick={() => {
-              setFilterRole("");
+              setFilterRole("All");
             }}
           >
             All
@@ -194,7 +194,7 @@ function Champions() {
       <div className='champions d-flex flex-wrap  container'>
         {champion
           .filter((item) => {
-            return filterRole === "" ? item : item.tags.includes(filterRole);
+            return filterRole === "All" ? true : item.tags.includes(filterRole);
           })
           .slice(0, itemNum)
           .map((item, index) => (

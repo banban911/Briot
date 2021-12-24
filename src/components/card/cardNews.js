@@ -1,10 +1,11 @@
 import React from "react";
-import "./Card.scss";
-import { Logo } from "../logo/Logo";
-import { ReactComponent as StoryIcon } from "../../assest/StoryIcon.svg";
-import { ReactComponent as PhotoIcon } from "../../assest/PhotoIcon.svg";
-import { ReactComponent as VideoIcon } from "../../assest/VideoIcon.svg";
 import { ReactComponent as ArrowIcon } from "../../assest/ArrowIcon.svg";
+import { ReactComponent as PhotoIcon } from "../../assest/PhotoIcon.svg";
+import { ReactComponent as StoryIcon } from "../../assest/StoryIcon.svg";
+import { ReactComponent as VideoIcon } from "../../assest/VideoIcon.svg";
+import LazyImage from "../../components/hooks/LazyImage";
+import { Logo } from "../logo/Logo";
+import "./Card.scss";
 
 function CardLastestNews(props) {
   const { title, bgUrl } = props;
@@ -114,7 +115,7 @@ function CardNewsMain(props) {
       <>
         <div className='cardnews_featured_container'>
           <div className='cardnews_featured_img'>
-            <img src={img} alt={title} />
+            <LazyImage src={img} alt={title} />
             <div className='cardnews_featured_icon'>
               {renderSwitch(iconType)}
             </div>
@@ -137,7 +138,7 @@ function CardNewsMain(props) {
     <>
       <div className='cardnews_main_container px-3'>
         <div className='cardnews_main_img'>
-          <img src={img} alt={title} />
+          <LazyImage src={img} alt={title} />
           <div className='cardnews_main_icon'>{renderSwitch(iconType)}</div>
         </div>
         <div className='cardnews_main_content_container  d-flex'>

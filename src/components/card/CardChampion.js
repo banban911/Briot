@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LazyImage from "../hooks/LazyImage.js";
 import { ChampIcon } from "../icons/Icons";
 import "./Card.scss";
 function CardChampion(props) {
@@ -15,16 +16,17 @@ function CardChampion(props) {
         className='championCard_container position-relative'
         style={{ overflow: "hidden" }}
       >
-        <div
+        <LazyImage
           className='champion_logo position-relative'
+          src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${img}_0.jpg`}
+          alt='nene'
           style={{
-            backgroundImage: `url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${img}_0.jpg'`,
             backgroundPosition: "70.3646% 32.037%",
             backgroundSize: "678px, 717px",
             backgroundRepeat: "no-repeat",
+            objectFit: "cover",
           }}
-        ></div>
-
+        />
         <div
           className='championCard_footer pt-3  position-absolute text-center'
           style={{
