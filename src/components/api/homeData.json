@@ -1,0 +1,35 @@
+[
+  {
+    "subMedia": [
+      {
+        "subMediaUrl": "url(https://www.riotgames.com/darkroom/500/0a8b4600c88cc7e4bd392b90405f892a:1ec9e334233288b382d9435bd8032d65/11-20-embargo-riot-riotxarcane-phase02-4k.jpg)",
+        "subMediaHeading": "RiotX Arcane: Until Next Time",
+        "subMediaCategory": "News"
+      },
+      {
+        "subMediaUrl": "url(https://www.riotgames.com/darkroom/500/1ebd5a4795ff7c0ab3452a8fb66d62ec:7ddf9d0daade174c1fd410add6fbbc60/xp1-yt-thumbnails-r21-projectl-textless.jpg)",
+        "subMediaHeading": "Project L /dev: Finding our Game",
+        "subMediaCategory": "News"
+      },
+      {
+        "subMediaUrl": "url(https://www.riotgames.com/darkroom/500/8bd730f154c8e4427e9fc2860d8c1987:353cc0a246e7038f77bde5ab11da2ea0/riotgames-article-2880x1621.png)",
+        "subMediaHeading": "Filipino American History Month Recap",
+        "subMediaCategory": "Inside Riot"
+      },
+      {
+        "subMediaUrl": "url(https://www.riotgames.com/darkroom/500/119aa629ef0f3050212cbc7e8d07fa79:d71e96e0b6c924bdda827d115d009992/rk-keyart-deluxe-16x9.jpg)",
+        "subMediaHeading": "Ruined King: A League of Legends Story™",
+        "subMediaCategory": "News"
+      }
+    ]
+  },
+  {
+    "mainMedia": [
+      {
+        "mainMediaUrl": "https://www.riotgames.com/darkroom/1000/6658bd07ca0debedc0717770ffbd4592:baf98ab92a8a7b37b3c38059b2c12912/riot-games-seattle-office-announcement.jpg",
+        "mainMediaHeading": "Riot’s Opening an Office in the Seattle Area",
+        "mainMediaCategory": "News"
+      }
+    ]
+  }
+]

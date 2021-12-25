@@ -51,7 +51,7 @@ function CardNews(props) {
         className='news_item_img'
         style={{
           flex: "0 0 38%",
-          backgroundImage: `url(${bgUrl})`,
+          backgroundImage: bgUrl,
           clipPath: "polygon(15% 0,100% 0,100% 100%,0 100%)",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -69,7 +69,7 @@ function CardNews(props) {
 }
 
 function CardNewsMain(props) {
-  const { img, time, title, summary, iconType, isFeatured } = props;
+  const { img, time, heading, summary, iconType, isFeatured, eyebrow } = props;
   const renderSwitch = (param) => {
     switch (param.type) {
       case "arrow":
@@ -83,48 +83,21 @@ function CardNewsMain(props) {
     }
   };
 
-  function validateTimestamp(time) {
-    const monthText = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dev",
-    ];
-
-    const inputMonthParse = Number(time.split("").slice(0, 2).join(""));
-
-    const outputMonth = monthText[inputMonthParse - 1];
-
-    const outputDate = time.split("").slice(3, 5).join("");
-
-    const outputYear = time.split("").slice(6, 10).join("");
-
-    return `${outputMonth} ${outputDate}, ${outputYear}`;
-  }
-
   if (isFeatured === true) {
     return (
       <>
         <div className='cardnews_featured_container'>
           <div className='cardnews_featured_img'>
-            <LazyImage src={img} alt={title} />
+            <LazyImage src={img} alt={heading} />
             <div className='cardnews_featured_icon'>
               {renderSwitch(iconType)}
             </div>
           </div>
           <div className='cardnews_featured_content_container d-flex'>
-            <div className='newstimestamp'>{validateTimestamp(time)}</div>
+            <div className='newstimestamp'>{time}</div>
             <div className='cardnews_main_featured_content'>
-              <div className='eyebow'>FEATURED</div>
-              <div className='cardnews_featured_title pt-3'>{title}</div>
+              <div className='eyebrow'>{eyebrow}</div>
+              <div className='cardnews_featured_title pt-3'>{heading}</div>
               <div className='cardnews_featured_summary d-none d-lg-block'>
                 {summary}
               </div>
@@ -138,14 +111,14 @@ function CardNewsMain(props) {
     <>
       <div className='cardnews_main_container px-3'>
         <div className='cardnews_main_img'>
-          <LazyImage src={img} alt={title} />
+          <LazyImage src={img} alt={heading} />
           <div className='cardnews_main_icon'>{renderSwitch(iconType)}</div>
         </div>
         <div className='cardnews_main_content_container  d-flex'>
-          <div className='newstimestamp'>{validateTimestamp(time)}</div>
+          <div className='newstimestamp'>{time}</div>
           <div className='cardnews_main_content'>
-            <div className='eyebow'>NEWS</div>
-            <div className='cardnews_main_title pt-3'>{title}</div>
+            <div className='eyebrow'>{eyebrow}</div>
+            <div className='cardnews_main_title pt-3'>{heading}</div>
             <div className='cardnews_main_summary d-none d-lg-block'>
               {summary}
             </div>
@@ -157,3 +130,30 @@ function CardNewsMain(props) {
 }
 
 export { CardLastestNews, CardNews, CardNewsMain };
+
+// function validateTimestamp(time) {
+//   const monthText = [
+//     "Jan",
+//     "Feb",
+//     "Mar",
+//     "Apr",
+//     "May",
+//     "Jun",
+//     "Jul",
+//     "Aug",
+//     "Sep",
+//     "Oct",
+//     "Nov",
+//     "Dev",
+//   ];
+
+//   const inputMonthParse = Number(time.split("").slice(0, 2).join(""));
+
+//   const outputMonth = monthText[inputMonthParse - 1];
+
+//   const outputDate = time.split("").slice(3, 5).join("");
+
+//   const outputYear = time.split("").slice(6, 10).join("");
+
+//   return `${outputMonth} ${outputDate}, ${outputYear}`;
+// }

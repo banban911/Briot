@@ -5,7 +5,11 @@ import { CardMain } from "../../components/card/CardMain";
 import { CardLastestNews, CardNews } from "../../components/card/cardNews";
 import { Btn } from "../../components/button/Btn";
 import LazyImage from "../../components/hooks/LazyImage";
+import newsInfo from "../../components/api/homeData.json";
 function Home() {
+  const mainMediaInfo = newsInfo[1];
+  const subMediaInfo = newsInfo[0];
+
   const riotProductsInfo = [
     {
       bg: "https://www.riotgames.com/darkroom/900/f9d37c368e03fe930db689c8877503ef:be16525176ab048e63dc8eada618bd07/lol-productimage.png",
@@ -99,7 +103,7 @@ function Home() {
     },
   ];
   return (
-    <>
+    <div style={{ minHeight: "100vh" }}>
       <div className='intro_banner position-relative'>
         <div
           className='lastest position-absolute'
@@ -144,7 +148,8 @@ function Home() {
                 fontWeight: "700",
               }}
             >
-              <div
+              <Link
+                to='/news'
                 className='lastestNews_container me-2'
                 style={{
                   flex: "1 1 60%",
@@ -152,15 +157,22 @@ function Home() {
                   marginBottom: "8%",
                 }}
               >
-                <CardLastestNews
-                  title={riotNewsInfo[0].title}
-                  bgUrl={riotNewsInfo[0].bgUrl}
-                />
-              </div>
+                <Link to='/news'>
+                  <CardLastestNews
+                    title={mainMediaInfo["mainMedia"][0]["mainMediaHeading"]}
+                    bgUrl={mainMediaInfo["mainMedia"][0]["mainMediaUrl"]}
+                  />
+                </Link>
+              </Link>
 
               <div className='news-items-container' style={{ flex: "1 1 40%" }}>
-                {riotNewsInfo.slice(1).map((item, index) => (
-                  <CardNews key={index} title={item.title} bgUrl={item.bgUrl} />
+                {subMediaInfo["subMedia"].map((item, index) => (
+                  <Link to='/news' key={index}>
+                    <CardNews
+                      title={item.subMediaHeading}
+                      bgUrl={item.subMediaUrl}
+                    />
+                  </Link>
                 ))}
               </div>
             </div>
@@ -211,7 +223,7 @@ function Home() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

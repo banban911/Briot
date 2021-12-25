@@ -1,6 +1,7 @@
 import React from "react";
 import { CardNewsMain } from "../../components/card/cardNews";
 import "./style.scss";
+import newItemInfo from "../../components/api/newsItemInfo.json";
 function LeagueOfLegend() {
   const cardnewsmainInfo = [
     {
@@ -101,6 +102,8 @@ function LeagueOfLegend() {
     },
   ];
 
+  console.log(newItemInfo);
+
   const cardnewsfeatureInfo = {
     isFeatured: true,
     img: "https://www.riotgames.com/darkroom/1000/74169cf03b2d7149b1df9186bd37c026:db4b56d20515568b89c76e7817fec9f3/ff9e1c806d4e36c2d3749ffd79f4f9d9.jpg",
@@ -120,15 +123,16 @@ function LeagueOfLegend() {
         </button>
       </div>
       <div className='cardnews_main row mb-3'>
-        {cardnewsmainInfo.slice(0, 4).map((item, index) => (
+        {newItemInfo.slice(0, 4).map((item, index) => (
           <div className='col-12 col-lg-6'>
             <CardNewsMain
               key={index}
-              img={item.img}
-              iconType={item.icon}
-              time={item.time}
-              title={item.title}
-              summary={item.summary}
+              img={item.newsItemUrl}
+              iconType='photo'
+              time={item.newsItemTime}
+              eyebrow={item.newsItemEyebrow}
+              heading={item.newsItemHeading}
+              summary={item.newsItemSummary}
             />
           </div>
         ))}
@@ -144,15 +148,16 @@ function LeagueOfLegend() {
         />
       </div>
       <div className='cardnews_main row mt-3'>
-        {cardnewsmainInfo.slice(4).map((item, index) => (
+        {newItemInfo.slice(4).map((item, index) => (
           <div className='col-12 col-lg-6'>
             <CardNewsMain
               key={index}
-              img={item.img}
-              iconType={item.icon}
-              time={item.time}
-              title={item.title}
-              summary={item.summary}
+              img={item.newsItemUrl}
+              iconType='photo'
+              time={item.newsItemTime}
+              eyebrow={item.newsItemEyebrow}
+              heading={item.newsItemHeading}
+              summary={item.newsItemSummary}
             />
           </div>
         ))}
