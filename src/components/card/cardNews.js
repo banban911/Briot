@@ -19,7 +19,7 @@ function CardLastestNews(props) {
       <Logo
         bgColor='#fff'
         color='#000'
-        width='2rem'
+        width='30'
         className='position-absolute'
         style={{ top: "1rem", left: "1rem" }}
       />
@@ -62,7 +62,7 @@ function CardNews(props) {
         className='logo_wrap position-absolute'
         style={{ right: "1rem", top: "1rem" }}
       >
-        <Logo bgColor='#000' color='#fff' width='2rem' />
+        <Logo bgColor='#000' color='#fff' width='30' />
       </div>
     </div>
   );
@@ -71,7 +71,7 @@ function CardNews(props) {
 function CardNewsMain(props) {
   const { img, time, heading, summary, iconType, isFeatured, eyebrow } = props;
   const renderSwitch = (param) => {
-    switch (param.type) {
+    switch (param) {
       case "arrow":
         return <ArrowIcon className='news_main_iconC' />;
       case "photo":
@@ -96,7 +96,7 @@ function CardNewsMain(props) {
           <div className='cardnews_featured_content_container d-flex'>
             <div className='newstimestamp'>{time}</div>
             <div className='cardnews_main_featured_content'>
-              <div className='eyebrow'>{eyebrow}</div>
+              <div className='eyebow'>{eyebrow}</div>
               <div className='cardnews_featured_title pt-3'>{heading}</div>
               <div className='cardnews_featured_summary d-none d-lg-block'>
                 {summary}
@@ -117,7 +117,7 @@ function CardNewsMain(props) {
         <div className='cardnews_main_content_container  d-flex'>
           <div className='newstimestamp'>{time}</div>
           <div className='cardnews_main_content'>
-            <div className='eyebrow'>{eyebrow}</div>
+            <div className='eyebow'>{eyebrow}</div>
             <div className='cardnews_main_title pt-3'>{heading}</div>
             <div className='cardnews_main_summary d-none d-lg-block'>
               {summary}

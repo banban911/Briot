@@ -14,7 +14,7 @@ soup = BeautifulSoup(page.content, 'html.parser')
 newsItemInfo = []
 
 newsItemUrl = soup.find_all('div', class_='responsive-media')
-newsItemEyebow = soup.find_all('div', class_='eyebrow')
+newsItemEyebrow = soup.find_all('div', class_='eyebrow')
 newsItemTime = soup.find_all('time', class_='summary__date')
 newsItemSummary = soup.find_all('div', class_='summary__sell')
 newsItemHeading = soup.find_all('h3', class_='summary__heading')
@@ -23,7 +23,7 @@ item = 1
 while item < len(newsItemUrl):
     newsItemInfo.append({
         'newsItemUrl':newsItemUrl[item].img['src'],
-        'newsItemEyebow':newsItemEyebow[item].span.get_text(),
+        'newsItemEyebrow':newsItemEyebrow[item].span.get_text(),
         'newsItemTime':newsItemTime[item].get_text(),
         'newsItemSummary':newsItemSummary[item].get_text(),
         'newsItemHeading':newsItemHeading[item].span.get_text()

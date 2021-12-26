@@ -11,8 +11,7 @@ function LeagueOfLegend() {
     icon: { type: "story" },
     time: "09/07/2021",
     title: "2020: Push Through",
-    summary:
-      "Together. we achieved a lot this eyar, and we couldn't have done it without your support. Thank you ",
+    summary: "The nicest poster in the list, I save it as my bias ",
   };
   return (
     <div className='news_container container'>
@@ -25,11 +24,10 @@ function LeagueOfLegend() {
       </div>
       <div className='cardnews_main row mb-3'>
         {newItemInfo.slice(0, 4).map((item, index) => (
-          <div className='col-12 col-lg-6'>
+          <div className='col-12 col-lg-6' key={index}>
             <CardNewsMain
-              key={index}
               img={item.newsItemUrl}
-              iconType='photo'
+              iconType={index % 2 === 0 ? "story" : "video"}
               time={item.newsItemTime}
               eyebrow={item.newsItemEyebrow}
               heading={item.newsItemHeading}
@@ -43,18 +41,18 @@ function LeagueOfLegend() {
           img={cardnewsfeatureInfo.img}
           iconType={cardnewsfeatureInfo.icon}
           time={cardnewsfeatureInfo.time}
-          title={cardnewsfeatureInfo.title}
+          eyebrow='News'
+          heading={cardnewsfeatureInfo.title}
           summary={cardnewsfeatureInfo.summary}
           isFeatured={cardnewsfeatureInfo.isFeatured}
         />
       </div>
       <div className='cardnews_main row mt-3'>
         {newItemInfo.slice(4).map((item, index) => (
-          <div className='col-12 col-lg-6'>
+          <div className='col-12 col-lg-6' key={index}>
             <CardNewsMain
-              key={index}
               img={item.newsItemUrl}
-              iconType='photo'
+              iconType={index % 3 === 0 ? "story" : "arrow"}
               time={item.newsItemTime}
               eyebrow={item.newsItemEyebrow}
               heading={item.newsItemHeading}

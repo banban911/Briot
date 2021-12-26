@@ -127,12 +127,10 @@ function Home() {
                   marginBottom: "8%",
                 }}
               >
-                <Link to='/news'>
-                  <CardLastestNews
-                    title={mainMediaInfo["mainMedia"][0]["mainMediaHeading"]}
-                    bgUrl={mainMediaInfo["mainMedia"][0]["mainMediaUrl"]}
-                  />
-                </Link>
+                <CardLastestNews
+                  title={mainMediaInfo["mainMedia"][0]["mainMediaHeading"]}
+                  bgUrl={mainMediaInfo["mainMedia"][0]["mainMediaUrl"]}
+                />
               </Link>
 
               <div className='news-items-container' style={{ flex: "1 1 40%" }}>
@@ -157,7 +155,7 @@ function Home() {
             <h1 style={{ color: "#fff" }}>OUR GAMES</h1>
             <div className='row'>
               {riotProductsInfo.map((item, index) => (
-                <div className='col-12 col-lg-6 col-sm-12'>
+                <div className='col-12 col-lg-6 col-sm-12' key={index}>
                   <CardMain
                     bg={item.bg}
                     description={item.description.toUpperCase()}
