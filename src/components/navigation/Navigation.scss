@@ -181,14 +181,14 @@ ul {
 .nav_mobile.hidden {
   opacity: 0.3;
   transform: translateX(150%);
-  left: -15px;
+  left: -16.5px;
   height: 100vh;
   width: 100vw;
 }
 .nav_mobile.show {
   opacity: 1;
   transform: translateX(0);
-  left: -15px;
+  left: -16.5px;
   height: 100vh;
   width: 100vw;
 }
@@ -197,7 +197,7 @@ ul {
   background-color: #2b2a29;
   border-radius: 30px 30px 30px 30px;
   max-width: 200px;
-  height: 35px;
+  height: 30px;
   padding: 0.25rem 1.5rem;
   float: right;
 
