@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Briot/static/css/main.6a37f6dd.chunk.css",
-    "main.js": "/Briot/static/js/main.ed195160.chunk.js",
-    "main.js.map": "/Briot/static/js/main.ed195160.chunk.js.map",
+    "main.css": "/Briot/static/css/main.1ebceaf9.chunk.css",
+    "main.js": "/Briot/static/js/main.004fce29.chunk.js",
+    "main.js.map": "/Briot/static/js/main.004fce29.chunk.js.map",
     "runtime-main.js": "/Briot/static/js/runtime-main.02c36590.js",
     "runtime-main.js.map": "/Briot/static/js/runtime-main.02c36590.js.map",
     "static/js/2.2cc2e3a6.chunk.js": "/Briot/static/js/2.2cc2e3a6.chunk.js",
     "static/js/2.2cc2e3a6.chunk.js.map": "/Briot/static/js/2.2cc2e3a6.chunk.js.map",
     "index.html": "/Briot/index.html",
-    "static/css/main.6a37f6dd.chunk.css.map": "/Briot/static/css/main.6a37f6dd.chunk.css.map",
+    "static/css/main.1ebceaf9.chunk.css.map": "/Briot/static/css/main.1ebceaf9.chunk.css.map",
     "static/js/2.2cc2e3a6.chunk.js.LICENSE.txt": "/Briot/static/js/2.2cc2e3a6.chunk.js.LICENSE.txt",
     "static/media/ArrowIcon.bd23bedb.svg": "/Briot/static/media/ArrowIcon.bd23bedb.svg",
     "static/media/Dropdown.c2ff5aab.svg": "/Briot/static/media/Dropdown.c2ff5aab.svg",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.02c36590.js",
     "static/js/2.2cc2e3a6.chunk.js",
-    "static/css/main.6a37f6dd.chunk.css",
-    "static/js/main.ed195160.chunk.js"
+    "static/css/main.1ebceaf9.chunk.css",
+    "static/js/main.004fce29.chunk.js"
   ]
 }
