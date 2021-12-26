@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Briot/static/css/main.85f4529b.chunk.css",
-    "main.js": "/Briot/static/js/main.416a760a.chunk.js",
-    "main.js.map": "/Briot/static/js/main.416a760a.chunk.js.map",
+    "main.js": "/Briot/static/js/main.6800dd75.chunk.js",
+    "main.js.map": "/Briot/static/js/main.6800dd75.chunk.js.map",
     "runtime-main.js": "/Briot/static/js/runtime-main.02c36590.js",
     "runtime-main.js.map": "/Briot/static/js/runtime-main.02c36590.js.map",
     "static/js/2.a84bd541.chunk.js": "/Briot/static/js/2.a84bd541.chunk.js",
@@ -22,6 +22,6 @@
     "static/js/runtime-main.02c36590.js",
     "static/js/2.a84bd541.chunk.js",
     "static/css/main.85f4529b.chunk.css",
-    "static/js/main.416a760a.chunk.js"
+    "static/js/main.6800dd75.chunk.js"
   ]
 }
