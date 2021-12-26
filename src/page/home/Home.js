@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Home.scss";
+import newsInfo from "../../components/api/homeData.json";
+import { Btn } from "../../components/button/Btn";
 import { CardMain } from "../../components/card/CardMain";
 import { CardLastestNews, CardNews } from "../../components/card/cardNews";
-import { Btn } from "../../components/button/Btn";
 import LazyImage from "../../components/hooks/LazyImage";
-import newsInfo from "../../components/api/homeData.json";
+import "./Home.scss";
 function Home() {
   const mainMediaInfo = newsInfo[1];
   const subMediaInfo = newsInfo[0];
@@ -72,36 +72,6 @@ function Home() {
     },
   ];
 
-  const riotNewsInfo = [
-    {
-      title: "Riot Games Elevates Ryan Crosby to President of Publishing",
-      bgUrl:
-        "https://www.riotgames.com/darkroom/1000/413f5cdaa5272fcbb94d62a44233861c:26c29b6def3e8e41f480e308e612ced6/ryan-crosby.jpg",
-    },
-    {
-      title: "New Riot Client Coming Soon",
-      bgUrl:
-        "https://www.riotgames.com/darkroom/500/ee3e986a072982e9dac2faea9548d066:ebc93e7931199b47780cbc11877ecfb8/valorant.png",
-    },
-    {
-      title:
-        "Annual Diversity and Inclusion (D&I) Progress Report - August 2021",
-      bgUrl:
-        "https://www.riotgames.com/darkroom/500/27681bc5bc281143598353b5aef66b22:325636b5c49ec1f6212737c8414a3fe0/riot-diversity-inclusion-report-2021-cover-2.jpg",
-    },
-
-    {
-      title: "Hello Riot Mobile! Farewell League+",
-      bgUrl:
-        "https://www.riotgames.com/darkroom/500/342822937083c12b58367f03fcc19d58:54fcf43e3f6834d1b6a15d172c906d78/riot-mobile-multigame-promo-final-1920x1080.jpg",
-    },
-    {
-      title:
-        "Erin Wayne Joins Riot Games as Its First-Ever Global Head of Player Community",
-      bgUrl:
-        "https://www.riotgames.com/darkroom/500/1ee204183d726dc79c3c2c55c1278cd5:1fdda0f8f202e0acdebe0901eb173c9a/erin-wayne.jpg",
-    },
-  ];
   return (
     <div style={{ minHeight: "100vh" }}>
       <div className='intro_banner position-relative'>
