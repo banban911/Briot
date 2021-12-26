@@ -96,7 +96,7 @@ function Home() {
       >
         <div className='news-intro position-relative'>
           <div
-            className='news-intro-container container pb-5 mb-5' // Lastest Riot news
+            className='news-intro-container container pb-5' // Lastest Riot news
           >
             <div className='py-3 d-flex justify-content-lg-between justify-content-md-lg justify-content-sm-center justify-content-center align-items-center'>
               <h1
