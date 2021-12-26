@@ -1,6 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 // import reactDOM from "react-dom";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "./Navigation.scss";
 
 import { ReactComponent as Dropdown } from "../../assest/Dropdown.svg";
@@ -9,19 +9,9 @@ import { CardItemBig, CardItemSmall } from "../card/CardHeader";
 import { Logo } from "../logo/Logo";
 
 function Navigation() {
-  const headerRef = useRef();
-  const handleScrollNav = () => {
-    const headerHeight = 0;
-    let currScrollPos =
-      window.pageYOffset || document.documentElement.scrollTop;
-    if (currScrollPos > headerHeight) {
-      headerRef.current.style.backgroundColor = "rgba(15, 15, 15, 0.85)";
-    } else {
-      headerRef.current.style.backgroundColor = "transparent";
-    }
-  };
-
-  window.addEventListener("scroll", handleScrollNav);
+  const currentLink = useLocation();
+  const currentPath = currentLink.pathname;
+  const headerRef = useRef(null);
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -37,6 +27,26 @@ function Navigation() {
   function handleMenu() {
     setShowMenu(!showMenu);
   }
+
+  const handleScrollNav = () => {
+    const headerHeight = 0;
+    let currScrollPos =
+      window.pageYOffset || document.documentElement.scrollTop;
+    if (
+      (headerRef.current !== null && currentPath === "/") ||
+      (currentPath === "/news" && !showMenu)
+    ) {
+      if (currScrollPos > headerHeight) {
+        headerRef.current.style.backgroundColor = "rgba(15, 15, 15, 0.85)";
+      } else {
+        headerRef.current.style.backgroundColor = "transparent";
+      }
+    }
+  };
+
+  if (headerRef.current !== null && (showMenu || currentPath !== "/")) {
+    headerRef.current.style.backgroundColor = "rgba(15, 15, 15, 0.85)";
+  } else window.addEventListener("scroll", handleScrollNav);
 
   const CardItemBigInfo = [
     {
@@ -74,6 +84,7 @@ function Navigation() {
   return (
     <header
       className='header w-100 px-3 d-flex align-items-center'
+      style={{ backgroundColor: "transparent" }}
       ref={headerRef}
     >
       <div className='navigation d-flex justify-content-between justify-content-lg-start justify-content-md-start justify-content-sm-between  w-100  align-items-center position-relative'>

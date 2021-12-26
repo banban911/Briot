@@ -21,8 +21,8 @@ function CardChampion(props) {
           src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${img}_0.jpg`}
           alt='nene'
           style={{
-            backgroundPosition: "70.3646% 32.037%",
-            backgroundSize: "678px, 717px",
+            objectPosition: "70.3646% 32.037%",
+            objectSize: "678px, 717px",
             backgroundRepeat: "no-repeat",
             objectFit: "cover",
           }}

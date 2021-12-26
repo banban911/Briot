@@ -98,7 +98,7 @@ function CardNewsMain(props) {
             <div className='cardnews_main_featured_content'>
               <div className='eyebow'>{eyebrow}</div>
               <div className='cardnews_featured_title pt-3'>{heading}</div>
-              <div className='cardnews_featured_summary d-none d-lg-block'>
+              <div className='cardnews_featured_summary line-clamp-2'>
                 {summary}
               </div>
             </div>
@@ -119,9 +119,7 @@ function CardNewsMain(props) {
           <div className='cardnews_main_content'>
             <div className='eyebow'>{eyebrow}</div>
             <div className='cardnews_main_title pt-3'>{heading}</div>
-            <div className='cardnews_main_summary d-none d-lg-block'>
-              {summary}
-            </div>
+            <div className='cardnews_main_summary line-clamp-2'>{summary}</div>
           </div>
         </div>
       </div>

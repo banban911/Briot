@@ -3,8 +3,6 @@ import { CardNewsMain } from "../../components/card/cardNews";
 import "./style.scss";
 import newItemInfo from "../../components/api/newsItemInfo.json";
 function LeagueOfLegend() {
-  console.log(newItemInfo);
-
   const cardnewsfeatureInfo = {
     isFeatured: true,
     img: "https://www.riotgames.com/darkroom/1000/74169cf03b2d7149b1df9186bd37c026:db4b56d20515568b89c76e7817fec9f3/ff9e1c806d4e36c2d3749ffd79f4f9d9.jpg",
